@@ -36,4 +36,12 @@ public class Carrier extends Ship
     {
         return length; 
     }
+    public void setXPos(int x)
+    {
+        xPos = x;
+    }
+    public void setYPos(int x)
+    {
+        yPos = x;
+    }
 }
