@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ShipMethod
+comment0.text=\n\ ShipMethod.java\ \n\n\ @author\:\n\ Assignment\ \#\:\n\ \n\ Brief\ Program\ Description\:\n\ \n\n
+comment1.params=
+comment1.target=int\ getLength()
+comment1.text=\n\ this\ method\ would\ prompt\ the\ class\ to\ return\ an\ integer,\ presumably\ the\ length\ of\ the\ ship.\n\ @param\:\ none\n\ @return\:\ int,\ which\ would\ be\ the\ length\ \n\ Author\:\ Anand\ Vadlamani\ \n
+numComments=2
