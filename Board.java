@@ -21,45 +21,45 @@ public class Board
     {
         grid = new String[10][10];
     }
-    public void opponentHit(Coordinate c)
+    public void opponentHit(int xPos, int yPos)
     /**
-     * marks a hit as an X on the opponent's board
+     * marks a hit as an X when the opponent hits the player's ship
      * @param Coordinate - location to be marked
      * @return none
      * @author Andrew
      */
     {
-        grid[c.getX()][c.getY()]="X";
+        grid[xPos][yPos]="X";
     }
-    public void opponentMiss(Coordinate c)
+    public void opponentMiss(int xPos, int yPos)
     /**
-     * marks a miss as O on the opponent's board
+     * marks a miss as O when the opponent misses the player's ships
      * @param Coordinate - location to be marked
      * @return none
      * @author Andrew
      */
     {
-        grid[c.getX()][c.getY()]="O";
+        grid[xPos][yPos]="O";
     }
-    public void playerHit(Coordinate c)
+    public void playerHit(int xPos, int yPos)
     /**
-     * marks a hit on player's board
+     * marks a hit when the player hits an opposing ship
      * @param Coordinate - location
      * @return none
      * @author Andrew
      */
     {
-        grid[c.getX()][c.getY()]="X";
+        grid[xPos][yPos]="X";
     }
-    public void playerMiss(Coordinate c)
+    public void playerMiss(int xPos, int yPos)
     /**
-     * marks a miss on the player's board
+     * marks a miss when the player misses an opposing ship
      * @param Coordinate - location
      * @return none
      * @author Andrew
      */
     {
-        grid[c.getX()][c.getY()]="O";
+        grid[xPos][yPos]="O";
     }
     public void printBoard()
     {

@@ -12,12 +12,14 @@ import java.util.ArrayList;
 public class Player
 {
     public ArrayList<Ship> list = new ArrayList<Ship>();
-    public Player(Submarine s, Gunboat g, Carrier c, Battleship b)
+    Board b = new Board();
+    public Player(Submarine s, Gunboat g, Carrier c, Battleship b, Board xd)
     {
         list.add(s);
         list.add(g);
         list.add(c);
         list.add(b);
+        this.b = xd;
     }
     public boolean guess(int xPos,int yPos, ArrayList<Ship> l)
     {
@@ -25,8 +27,20 @@ public class Player
         {
             for(Coordinate c: s.getCoordinates())
             {
-                
+                if(c.getX() == xPos && c.getY() == yPos)
+                {
+                    return true;
+                }
             }
         }
+        return false;
+    }
+    public void markGuess(int xPos, int yPos)
+    {
+        b.playerMiss(xPos, yPos);
+    }
+    public void markHit(int xPos, int yPos)
+    {
+        b.playerHit(xPos, yPos);
     }
 }
