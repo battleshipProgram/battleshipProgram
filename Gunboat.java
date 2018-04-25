@@ -23,7 +23,8 @@ public class Gunboat extends Ship
      */
     public Gunboat(int xPos, int yPos, int length, boolean vert)
     {
-        super(xPos,yPos,length,vert);
+        super(xPos,yPos,vert);
+        length = 3;
     }
     
     /**
