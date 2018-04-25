@@ -38,9 +38,13 @@ public class Opponent
         {
             for(Coordinate c: s.getCoordinates())
             {
+                if(c.getX() == xPos && c.getY() == yPos)
+                {
+                    return true;
+                }
             }
         }
-        return true;
+        return false;
     }
 
     public void setShips()
