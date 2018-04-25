@@ -68,7 +68,7 @@ public abstract class Ship implements ShipMethod
      * @return: arraylist coordinates - the coordinates of the ship
      * Author: Anand Vadlamani 
      */
-    public ArrayList getCoordinates()
+    public ArrayList<Coordinate> getCoordinates()
     {
         return coordinates; 
     }

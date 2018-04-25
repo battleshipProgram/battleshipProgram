@@ -19,8 +19,14 @@ public class Player
         list.add(c);
         list.add(b);
     }
-    public void guess(int xPos,int yPos)
+    public boolean guess(int xPos,int yPos, ArrayList<Ship> l)
     {
-        
+        for(Ship s: l)
+        {
+            for(Coordinate c: s.getCoordinates())
+            {
+                
+            }
+        }
     }
 }
