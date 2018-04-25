@@ -23,4 +23,8 @@ public class Opponent
     {
         
     }
+    public void setShips()
+    {
+        
+    }
 }
