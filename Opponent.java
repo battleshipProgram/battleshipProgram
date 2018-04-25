@@ -30,7 +30,7 @@ public class Opponent
     }
 
     /**
-     * 
+     * this method checks to guess 
      */
     public boolean guess(int xPos,int yPos, ArrayList<Ship> ships)
     {
