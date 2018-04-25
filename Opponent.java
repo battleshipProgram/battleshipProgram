@@ -12,6 +12,15 @@ import java.util.ArrayList;
 public class Opponent
 {
     public ArrayList<Ship> list = new ArrayList<Ship>();
+    /**
+     * creates a Opponent object to play against the player
+     * (this would be an automated system so a lot 
+     * of use of math.random and making sure it guesses and 
+     * places the ships fairly)
+     * @param: Submarine s, Gunboat g, Carrier c, Battleship b
+     * @return: none. this is a constructor
+     * Author: Anand Vadlamani 
+     */
     public Opponent(Submarine s, Gunboat g, Carrier c, Battleship b)
     {
         list.add(s);
@@ -19,12 +28,25 @@ public class Opponent
         list.add(c);
         list.add(b);
     }
-    public void guess(int xPos,int yPos)
+
+    /**
+     * 
+     */
+    public boolean guess(int xPos,int yPos, ArrayList<Ship> ships)
     {
-        
+        for(Ship s: ships)
+        {
+            for(Coordinate c: s.getCoordinates())
+            {
+            }
+        }
+        return true;
     }
+
     public void setShips()
     {
-        
+
     }
+    
+    
 }
