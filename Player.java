@@ -39,8 +39,25 @@ public class Player
     {
         b.playerMiss(xPos, yPos);
     }
-    public void markHit(int xPos, int yPos)
+    public void markHit(int xPos, int yPos, ArrayList<Coordinate> opponentShips)
     {
         b.playerHit(xPos, yPos);
+        for(Coordinate c: opponentShips)
+        {
+            if(c.getX() == xPos && c.getY() == yPos)
+            {
+                opponentShips.remove(c);
+            }
+        }
+    }
+    public void playerHit(int xPos, int yPos, ArrayList<Coordinate> playerShips)
+    {
+        for(Coordinate c: playerShips)
+        {
+            if(c.getX() == xPos && c.getY() == yPos)
+            {
+                playerShips.remove(c);
+            }
+        }
     }
 }
