@@ -24,7 +24,6 @@ public abstract class Ship implements ShipMethod
      */
     public Ship(int xPos, int yPos,boolean vert)
     {
-        
         c = new Coordinate(xPos,yPos);
         coordinates.add(c);
         if(vert)
@@ -72,6 +71,4 @@ public abstract class Ship implements ShipMethod
     {
         return coordinates; 
     }
-    
-    
 }
