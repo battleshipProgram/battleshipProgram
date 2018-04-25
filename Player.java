@@ -11,8 +11,17 @@ import java.util.ArrayList;
  */
 public class Player
 {
+    /**
+     * note to self: make all variables xd
+     */
     public ArrayList<Ship> list = new ArrayList<Ship>();
     Board b = new Board();
+    /**
+     * creates a player object
+     * @param: Submarine s, Gunboat g, Carrier c, Battleship b, Board xd
+     * @return: it's a constructor for gods sake there is no return
+     * Author: Allen Ding
+     */
     public Player(Submarine s, Gunboat g, Carrier c, Battleship b, Board xd)
     {
         list.add(s);
