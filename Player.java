@@ -21,7 +21,7 @@ public class Player
         list.add(b);
         this.b = xd;
     }
-    public boolean guess(int xPos,int yPos, ArrayList<Ship> l)
+    public boolean guess(int xPos, int yPos, ArrayList<Ship> l)
     {
         for(Ship s: l)
         {
