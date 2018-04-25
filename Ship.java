@@ -22,7 +22,7 @@ public abstract class Ship implements ShipMethod
      * @return: none. this is a constructor
      * Author: Anand Vadlamani 
      */
-    public Ship(int xPos, int yPos, int length, boolean vert)
+    public Ship(int xPos, int yPos,boolean vert)
     {
         this.length = length;
         c = new Coordinate(xPos,yPos);
