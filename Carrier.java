@@ -21,7 +21,7 @@ public class Carrier extends Ship
      * @return: none. this is a constructor
      * Author: Anand Vadlamani 
      */
-    public Carrier(int xPos, int yPos, int length, boolean vert)
+    public Carrier(int xPos, int yPos,boolean vert)
     {
         super(xPos,yPos,vert);
         length = 4;

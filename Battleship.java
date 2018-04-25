@@ -21,7 +21,7 @@ public class Battleship extends Ship
      * @return: none. this is a constructor
      * Author: Anand Vadlamani 
      */
-    public Battleship(int xPos, int yPos, int length, boolean vert)
+    public Battleship(int xPos, int yPos,boolean vert)
     {
         super(xPos,yPos,vert);
         length = 5; 

@@ -21,7 +21,7 @@ public class Gunboat extends Ship
      * @return: none. this is a constructor
      * Author: Anand Vadlamani 
      */
-    public Gunboat(int xPos, int yPos, int length, boolean vert)
+    public Gunboat(int xPos, int yPos,boolean vert)
     {
         super(xPos,yPos,vert);
         length = 3;

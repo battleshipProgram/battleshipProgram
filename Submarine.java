@@ -22,7 +22,7 @@ public class Submarine extends Ship
      * @return: none. this is a constructor
      * Author: Anand Vadlamani 
      */
-    public Submarine(int xPos, int yPos, int length, boolean vert)
+    public Submarine(int xPos, int yPos,boolean vert)
     {
         super(xPos,yPos,vert);
         length = 2;
