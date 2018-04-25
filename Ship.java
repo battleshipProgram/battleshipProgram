@@ -72,4 +72,6 @@ public abstract class Ship implements ShipMethod
     {
         return coordinates; 
     }
+    
+    
 }
