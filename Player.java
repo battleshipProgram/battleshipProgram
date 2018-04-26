@@ -92,7 +92,12 @@ public class Player
     }
 
     /**
-     * If the player is hit, 
+     * If the player is hit, it removes the coordinate of the ship that was hit.
+     * If the ship has been destroyed, removes that ship from the ArrayList of
+     * ships.
+     * @param: int xPos, int yPos, ArrayList<Ship> playerShips
+     * @return: does not return anything since it is changing the ArrayList
+     * Author: Allen Ding
      */
     public void playerHit(int xPos, int yPos, ArrayList<Ship> playerShips)
     {
