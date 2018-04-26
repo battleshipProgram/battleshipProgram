@@ -38,10 +38,24 @@ public class Submarine extends Ship
     {
         return length; 
     }
+    
+    /**
+     * setXPos() - this method sets the x position to a new value
+     * @param: int x, which becomes xPos
+     * @return: none, void return type
+     * Author: Anand Vadlamani 
+     */
     public void setXPos(int x)
     {
         xPos = x;
     }
+    
+    /**
+     * *setYPos() - this method sets the y position to a new value
+     * @param: int x, which becomes yPos
+     * @return: none, void return type
+     * Author: Anand Vadlamani 
+     */
     public void setYPos(int x)
     {
         yPos = x;
