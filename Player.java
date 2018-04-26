@@ -30,6 +30,13 @@ public class Player
         list.add(b);
         this.b = xd;
     }
+
+    /**
+     * allows the player to guess and sees if they hit an enemy ship or not
+     * @param: int xPos, int yPos, ArrayList<Ship> l
+     * @return: returns a boolean based on whether or not they hit an enemy ship
+     * Author: Allen Ding
+     */
     public boolean guess(int xPos, int yPos, ArrayList<Ship> l)
     {
         for(Ship s: l)
@@ -44,28 +51,63 @@ public class Player
         }
         return false;
     }
+
+    /**
+     * when the player has not hit a ship,(called when player.guess() returns false)
+     * it marks where they guessed.
+     * @param: int xPos, int yPos 
+     * @return: no return since it changes things on the board
+     * Author: Allen Ding
+     */
     public void markGuess(int xPos, int yPos)
     {
         b.playerMiss(xPos, yPos);
     }
-    public void markHit(int xPos, int yPos, ArrayList<Coordinate> opponentShips)
+
+    /**
+     * when the player does hit a ship, (called when player.guess() returns true)
+     * it marks where it was they had guessed. If the player has "sunk" a ship,
+     * removes that ship from the opponent's arrayList.
+     * @param: int xPos, int yPos, ArrayList<Coordinate> opponentShips
+     * @return: none, since it only changes the ArrayLists
+     * Author: Allen Ding
+     */
+    public void markHit(int xPos, int yPos, ArrayList<Ship> opponentShips)
     {
         b.playerHit(xPos, yPos);
-        for(Coordinate c: opponentShips)
+        for(Ship s: opponentShips)
         {
-            if(c.getX() == xPos && c.getY() == yPos)
+            for(Coordinate c: s.getCoordinates())
             {
-                opponentShips.remove(c);
+                if(c.getX() == xPos && c.getY() == yPos)
+                {
+                    s.getCoordinates().remove(c);
+                }
+                if(s.getCoordinates().size() == 0)
+                {
+                    opponentShips.remove(s);
+                }
             }
         }
     }
-    public void playerHit(int xPos, int yPos, ArrayList<Coordinate> playerShips)
+
+    /**
+     * If the player is hit, 
+     */
+    public void playerHit(int xPos, int yPos, ArrayList<Ship> playerShips)
     {
-        for(Coordinate c: playerShips)
+        for(Ship s: playerShips)
         {
-            if(c.getX() == xPos && c.getY() == yPos)
+            for(Coordinate c: s.getCoordinates())
             {
-                playerShips.remove(c);
+                if(c.getX() == xPos && c.getY() == yPos)
+                {
+                    s.getCoordinates().remove(c);
+                }
+                if(s.getCoordinates().size() == 0)
+                {
+                    playerShips.remove(s);
+                }
             }
         }
     }
