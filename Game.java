@@ -14,6 +14,8 @@ public class Game
 {
     private ArrayList<Integer> xList;
     private ArrayList<Integer> yList;
+    private Player p;
+    private Opponent o; 
     public Game()
     {
         xList=new ArrayList<Integer>();

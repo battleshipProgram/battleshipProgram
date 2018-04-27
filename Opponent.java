@@ -41,8 +41,7 @@ public class Opponent
             {
                 if(c.getX() == xPos && c.getY() == yPos)
                 {
-                    return true;
-                    
+                    return true; 
                 }
             }
         }
