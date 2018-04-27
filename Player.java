@@ -74,7 +74,7 @@ public class Player
      */
     public void markHit(int xPos, int yPos, ArrayList<Ship> opponentShips)
     {
-        b.playerHit(xPos, yPos);
+        b.playerHit(xPos,yPos);
         for(Ship s: opponentShips)
         {
             for(Coordinate c: s.getCoordinates())
