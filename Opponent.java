@@ -11,7 +11,9 @@ import java.util.ArrayList;
  */
 public class Opponent
 {
-    public ArrayList<Ship> list = new ArrayList<Ship>();
+    private ArrayList<Ship> list = new ArrayList<Ship>();
+    private int xPos;
+    private int yPos;
     /**
      * creates a Opponent object to play against the player
      * (this would be an automated system so a lot 
@@ -28,28 +30,41 @@ public class Opponent
         list.add(c);
         list.add(b);
     }
-
-    /**
-     * this method checks to guess 
-     */
-    public boolean guess(int xPos,int yPos, ArrayList<Ship> ships)
+    
+    public boolean guess(ArrayList<Ship> l)
     {
-        for(Ship s: ships)
+        xPos = (int)(Math.random()*10 + 1);
+        yPos = (int)(Math.random()*10 + 1);
+        for(Ship s: l)
         {
             for(Coordinate c: s.getCoordinates())
             {
                 if(c.getX() == xPos && c.getY() == yPos)
                 {
                     return true;
+                    
                 }
             }
         }
         return false;
     }
+    
+    /**
+     * this method checks to guess 
+     */
+    public void nextToHit()
+    {
+        xPos = (int)(Math.random()*10 + 1);
+        yPos = (int)(Math.random()*10 + 1);
+        
+    }
 
     public void setShips()
     {
-        
+        for (Ship s: list)
+        {
+            
+        }
     }
     
     
