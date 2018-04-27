@@ -63,7 +63,18 @@ public class Opponent
     {
         for (Ship s: list)
         {
-            
+            for (Coordinate c: s.getCoordinates())
+            {
+                ArrayList <Coordinate> coordinates = new ArrayList<Coordinate>();
+               
+                
+                    
+                    xPos = (int)(Math.random()*10 + 1);
+                    yPos = (int)(Math.random()*10 + 1);
+                    Coordinate coordinate = new Coordinate (xPos, yPos);
+                    coordinates.add(coordinate);
+                
+            }
         }
     }
     
