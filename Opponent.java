@@ -41,7 +41,7 @@ public class Opponent
             {
                 if(c.getX() == xPos && c.getY() == yPos)
                 {
-                    return true; 
+                    return true;
                 }
             }
         }
@@ -64,14 +64,19 @@ public class Opponent
         {
             for (Coordinate c: s.getCoordinates())
             {
-                ArrayList <Coordinate> coordinates = new ArrayList<Coordinate>();
+                // ArrayList <Coordinate> coordinates = new ArrayList<Coordinate>();
                
                 
                     
-                    xPos = (int)(Math.random()*10 + 1);
-                    yPos = (int)(Math.random()*10 + 1);
-                    Coordinate coordinate = new Coordinate (xPos, yPos);
-                    coordinates.add(coordinate);
+                    // xPos = (int)(Math.random()*10 + 1);
+                    // yPos = (int)(Math.random()*10 + 1);
+                    // Coordinate coordinate = new Coordinate (xPos, yPos);
+                    // coordinates.add(coordinate);
+                    
+                for (int i = 0; i < list.size(); i ++)
+                {
+                    
+                }
                 
             }
         }
