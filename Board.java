@@ -61,6 +61,12 @@ public class Board
     {
         grid[xPos][yPos]="O";
     }
+    /**
+     * prints the board 
+     * @param: none
+     * @return none, its a void return type
+     * Author: Anand Vadlamani 
+     */
     public void printBoard()
     {
         for(int i = 0; i < grid.length; i++)
