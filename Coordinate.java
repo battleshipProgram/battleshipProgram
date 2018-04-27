@@ -2,12 +2,14 @@
 /**
  * Coordinate.java  
  *
- * @author:
- * Assignment #:
+ * @author: Anand Vadlamani 
  * 
  * Brief Program Description:
- * 
- *
+ * This creates the coordinate object. This coordinate is one of many of the ship objects. 
+ * Coordinates are what make up the ship (and the number of coordinates is 
+ * based on the length of the ship that is created). It has a getX and getY method, 
+ * as well as a simple toString. The true complexity of this clas is seen 
+ * in its implementation in the other classes and its imperative role in the game overall. 
  */
 public class Coordinate
 {

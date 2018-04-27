@@ -2,12 +2,15 @@ import java.util.ArrayList;
 /**
  * Ship.java  
  *
- * @author:
- * Assignment #:
+ * @author: Anand Vadlamani 
  * 
  * Brief Program Description:
- * 
- *
+ * This class is the parent abstract ship class. It will be the 
+ * parent of the four sub-classes we have which are the four ships. 
+ * Further, it will have the abstract method getLength() which 
+ * is to be implemented in the four child classes. It creates a ship object,
+ * but you can also create the sub classes throughpolymorphism. It
+ * instantiates the ship based on length and orientation and coordinates.
  */
 public abstract class Ship implements ShipMethod
 {

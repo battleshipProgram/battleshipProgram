@@ -2,12 +2,15 @@
 /**
  * Carrier.java  
  *
- * @author:
- * Assignment #:
+ * @author: Anand Vadlamani 
  * 
  * Brief Program Description:
- * 
- *
+ * Creates the carrier as a subclass of the ship class. This class
+ * contains the getLength() method and is able to set the x and y 
+ * position of the ship. Note that the x and y position is the top 
+ * most or the right most coordinate - based on the orientation 
+ * boolean. You can create this object as a ship using
+ * polymorphism. 
  */
 public class Carrier extends Ship
 {
