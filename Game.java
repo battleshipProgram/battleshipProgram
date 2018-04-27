@@ -36,18 +36,18 @@ public class Game
         int yPos=scan.nextInt();
         System.out.println("Col: ");
         int xPos=scan.nextInt();
+        
+        for(int i=0; i<xList.size()-1;i++){
+            if(xPos==xList.get(i)&&yPos==yList.get(i)){
+                System.out.println("Cannot put ships on top of each other");
+                System.out.println("Location of "+s+": \nRow: ");
+                yPos=scan.nextInt();
+                System.out.println("Col: ");
+                xPos=scan.nextInt();
+            }
+        }
         updatexList(xPos);
         updateyList(yPos);
-        for(int i=0; i<xList.size()-1;i++){
-            if(xPos==xList.get(i)){
-                
-            }
-        }
-        for(int i=0;i<yList.size()-1;i++){
-            if(yPos==yList.get(i)){
-                
-            }
-        }
        
         System.out.println("Orientation (right/up): ");
         String orient=scan.nextLine();
