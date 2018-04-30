@@ -3,9 +3,7 @@ import java.util.ArrayList;
 /**
  * Game.java  
  *
- * @author:
- * Assignment #:
- * 
+ * @author: Andrew Zhuang
  * Brief Program Description:
  * runs all the steps necessary to play the game
  *
