@@ -73,6 +73,14 @@ public abstract class Ship implements ShipMethod
         return coordinates; 
     }
     
+    /**
+     * getOrientation() - this method returns the boolean of the orientation
+     * if the returned boolean is true, it is vertical. if it is false, it 
+     * is horizontal;
+     * @param: none
+     * @return: boolean orient
+     * Author: Anand Vadlamani 
+     */
     public boolean getOrientation()
     {
         return orient; 
