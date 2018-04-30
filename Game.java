@@ -22,8 +22,53 @@ public class Game
         xList=new ArrayList<Integer>();
         yList=new ArrayList<Integer>();
         playerBoard=new Board();
-
-        p=new Player(createSub(),createGun(),createCarrier(),createBattle(),playerBoard);
+        boolean overlap=true;
+        while(overlap){
+            int x=0;
+            Ship sub=createSub();
+            Ship gun=createGun();
+            //checks overlap
+            for(Coordinate c1:sub.getCoordinates()){
+                for(Coordinate c2:gun.getCoordinates()){
+                    if(c1.getX()==c2.getX()&&c1.getY()==c2.getY()){
+                        System.out.println("Sub and Gunboat overlap, please reenter coordinates");
+                        x++;
+                    }
+                }
+            }
+            overlap=(x>0);
+        }
+        overlap=true;
+        
+        while(overlap){
+            int x=0;
+            Ship car=createCar();
+            //checks overlap
+            for(Coordinate c1:sub.getCoordinates()){
+                for(Coordinate c2:car.getCoordinates()){
+                    if(c1.getX()==c2.getX()&&c1.getY()==c2.getY()){
+                        System.out.println("Sub and Carrier overlap, please reenter coordinates");
+                        x++;
+                    }
+                }
+            }
+            overlap=(x>0);
+        }
+        overlap=true;
+        while(overlap){
+            int x=0;
+            Ship battle=createBattle();
+            //checks overlap
+            for(Coordinate c1:sub.getCoordinates()){
+                for(Coordinate c2:battle.getCoordinates()){
+                    if(c1.getX()==c2.getX()&&c1.getY()==c2.getY()){
+                        System.out.println("Sub and Battleship overlap, please reenter coordinates ");
+                        x++;
+                    }
+                }
+            }
+            overlap=(x>0);
+        }
 
     }
 
