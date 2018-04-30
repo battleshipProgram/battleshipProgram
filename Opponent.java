@@ -2,7 +2,7 @@ import java.util.ArrayList;
 /**
  * Opponent.java  
  *
- * @author:
+ * @author: Matt Li
  * Assignment #:
  * 
  * Brief Program Description:
@@ -11,9 +11,9 @@ import java.util.ArrayList;
  */
 public class Opponent
 {
-    private ArrayList<Ship> list = new ArrayList<Ship>();
-    private int xPos;
-    private int yPos;
+    private static ArrayList<Ship> list = new ArrayList<Ship>();
+    private static int xPos;
+    private static int yPos;
     /**
      * creates a Opponent object to play against the player
      * (this would be an automated system so a lot 
@@ -31,6 +31,16 @@ public class Opponent
         list.add(b);
     }
     
+    /**
+     * The guess(ArrayList<Ship> l) allows the ship to take a shot at a 
+     * Player's ship. It hits a random xPos and yPos and if it hits any 
+     * coordinate of a ship, it returns true. In the Game class, if the boolean
+     * returns true, the ship will be allowed to take another guess that will
+     * be around the place that it hit.
+     * @param: ArrayList<Ship> l
+     * @return: boolean
+     * @Author: Matt Li
+     */
     public boolean guess(ArrayList<Ship> l)
     {
         xPos = (int)(Math.random()*10 + 1);
@@ -58,25 +68,28 @@ public class Opponent
         
     }
 
-    public void setShips()
+    public static void setShips()
     {
         for (Ship s: list)
         {
             for (Coordinate c: s.getCoordinates())
             {
-                // ArrayList <Coordinate> coordinates = new ArrayList<Coordinate>();
+                ArrayList <Coordinate> coordinates = new ArrayList<Coordinate>();
                
                 
                     
-                    // xPos = (int)(Math.random()*10 + 1);
-                    // yPos = (int)(Math.random()*10 + 1);
-                    // Coordinate coordinate = new Coordinate (xPos, yPos);
-                    // coordinates.add(coordinate);
+                    xPos = (int)(Math.random()*10 + 1);
+                    yPos = (int)(Math.random()*10 + 1);
+                    Coordinate coordinate = new Coordinate (xPos, yPos);
+                    coordinates.add(coordinate);
                     
-                for (int i = 0; i < list.size(); i ++)
-                {
-                    
-                }
+                
+                    if (c.getX() != coordinate.getX() && 
+                        c.getY() != coordinate.getY())
+                    {
+                        
+                    }
+                
                 
             }
         }
