@@ -35,7 +35,7 @@ public class Game
         yList.add(y);
     }
 
-    public Submarine createSub()
+    public Ship createSub()
     {
         Scanner scan=new Scanner(System.in);
         System.out.println("Location of Submarine: \nRow: ");
@@ -71,7 +71,7 @@ public class Game
             vert=true;
         }
 
-        Submarine sub=new Submarine(xPos,yPos,vert);
+        Ship sub=new Submarine(xPos,yPos,vert);
         return sub;
 
     }
