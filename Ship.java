@@ -17,7 +17,7 @@ public abstract class Ship implements ShipMethod
     private int length; 
     Coordinate c; 
     private ArrayList<Coordinate> coordinates;
-    private boolean orientVert,orientHor;
+    private boolean orient;
     /**
      * creates a ship object(note that the ship is an abstract object
      * and thus it could only be instantiated through polymorphism)
@@ -31,13 +31,11 @@ public abstract class Ship implements ShipMethod
         coordinates.add(c);
         if(vert)
         {
-            orientVert = true;
-            orientHor = false;
+          orient = true;
         }
         else
         {
-            orientVert = false;
-            orientHor = true;
+            orient = false;
         }
         if(vert)
         {
@@ -73,5 +71,10 @@ public abstract class Ship implements ShipMethod
     public ArrayList<Coordinate> getCoordinates()
     {
         return coordinates; 
+    }
+    
+    public boolean getOrientation()
+    {
+        return orient; 
     }
 }
