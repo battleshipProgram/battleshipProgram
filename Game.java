@@ -25,7 +25,6 @@ public class Game
         Ship car=createCarrier();
         Ship battle=createBattle();
         
-        
 
     }
 
