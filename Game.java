@@ -76,7 +76,7 @@ public class Game
 
     }
 
-    public Gunboat createGun()
+    public Ship createGun()
     {
         Scanner scan=new Scanner(System.in);
         System.out.println("Location of Gunboat: \nRow: ");
@@ -112,12 +112,12 @@ public class Game
             vert=true;
         }
 
-        Gunboat gun=new Gunboat(xPos,yPos,vert);
+        Ship gun=new Gunboat(xPos,yPos,vert);
         return gun;
 
     }
 
-    public Carrier createCarrier()
+    public Ship createCarrier()
     {
         Scanner scan=new Scanner(System.in);
         System.out.println("Location of Carrier: \nRow: ");
@@ -153,12 +153,12 @@ public class Game
             vert=true;
         }
 
-        Carrier car=new Carrier(xPos,yPos,vert);
+        Ship car=new Carrier(xPos,yPos,vert);
         return car;
 
     }
 
-    public Battleship createBattle()
+    public Ship createBattle()
     {
         Scanner scan=new Scanner(System.in);
         System.out.println("Location of Battleship: \nRow: ");
@@ -194,7 +194,7 @@ public class Game
             vert=true;
         }
 
-        Battleship battle=new Battleship(xPos,yPos,vert);
+        Ship battle=new Battleship(xPos,yPos,vert);
         return battle;
 
     }
