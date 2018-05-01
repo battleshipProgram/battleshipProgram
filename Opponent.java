@@ -43,29 +43,24 @@ public class Opponent
      */
     public boolean guess(ArrayList<Ship> l)
     {
+        ArrayList <Coordinate> coordinates = new ArrayList<Coordinate>();
         xPos = (int)(Math.random()*10 + 1);
         yPos = (int)(Math.random()*10 + 1);
+        Coordinate coordinate = new Coordinate (xPos, yPos);
+        coordinates.add(coordinate);
         for(Ship s: l)
         {
             for(Coordinate c: s.getCoordinates())
             {
-                if(c.getX() == xPos && c.getY() == yPos)
+                while (c.getX() == coordinate.getX() && c.getY() == coordinate.getY())
                 {
-                    return true;
+                    xPos = (int)(Math.random()*10 + 1);
+                    yPos = (int)(Math.random()*10 + 1);
                 }
+                return true;
             }
         }
         return false;
-    }
-    
-    /**
-     * this method checks to guess 
-     */
-    public void nextToHit()
-    {
-        xPos = (int)(Math.random()*10 + 1);
-        yPos = (int)(Math.random()*10 + 1);
-        
     }
 
     public static void setShips()
@@ -74,23 +69,16 @@ public class Opponent
         {
             for (Coordinate c: s.getCoordinates())
             {
-                ArrayList <Coordinate> coordinates = new ArrayList<Coordinate>();
-               
-                
-                    
-                    xPos = (int)(Math.random()*10 + 1);
-                    yPos = (int)(Math.random()*10 + 1);
-                    Coordinate coordinate = new Coordinate (xPos, yPos);
-                    coordinates.add(coordinate);
-                    
-                
-                    if (c.getX() != coordinate.getX() && 
-                        c.getY() != coordinate.getY())
-                    {
-                        
-                    }
-                
-                
+               ArrayList <Coordinate> coordinates = new ArrayList<Coordinate>();
+               xPos = (int)(Math.random()*10 + 1);
+               yPos = (int)(Math.random()*10 + 1);
+               Coordinate coordinate = new Coordinate (xPos, yPos);
+               coordinates.add(coordinate);
+               while (c.getX() == coordinate.getX() && c.getY() == coordinate.getY())
+               {
+                   xPos = (int)(Math.random()*10 + 1);
+                   yPos = (int)(Math.random()*10 + 1);
+               }               
             }
         }
     }
