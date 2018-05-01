@@ -24,6 +24,7 @@ public class Game
         Ship gun=createGun();
         Ship car=createCarrier();
         Ship battle=createBattle();
+        //checks overlaps
         
 
     }
@@ -44,17 +45,7 @@ public class Game
         System.out.println("Col: ");
         int xPos=scan.nextInt();
 
-        for(int i=0; i<xList.size()-1;i++){
-            if(xPos==xList.get(i)&&yPos==yList.get(i)){
-                System.out.println("Cannot put ships on top of each other");
-                System.out.println("Location of Submarine: \nRow: ");
-                yPos=scan.nextInt();
-                System.out.println("Col: ");
-                xPos=scan.nextInt();
-            }
-        }
-        updatexList(xPos);
-        updateyList(yPos);
+        
 
         System.out.println("Orientation (right/up): ");
         String orient=scan.nextLine();
@@ -85,18 +76,7 @@ public class Game
         System.out.println("Col: ");
         int xPos=scan.nextInt();
 
-        for(int i=0; i<xList.size()-1;i++){
-            if(xPos==xList.get(i)&&yPos==yList.get(i)){
-                System.out.println("Cannot put ships on top of each other");
-                System.out.println("Location of Gunboat: \nRow: ");
-                yPos=scan.nextInt();
-                System.out.println("Col: ");
-                xPos=scan.nextInt();
-            }
-        }
-        updatexList(xPos);
-        updateyList(yPos);
-
+        
         System.out.println("Orientation (right/up): ");
         String orient=scan.nextLine();
         boolean vert;
@@ -126,18 +106,7 @@ public class Game
         System.out.println("Col: ");
         int xPos=scan.nextInt();
 
-        for(int i=0; i<xList.size()-1;i++){
-            if(xPos==xList.get(i)&&yPos==yList.get(i)){
-                System.out.println("Cannot put ships on top of each other");
-                System.out.println("Location of Carrier: \nRow: ");
-                yPos=scan.nextInt();
-                System.out.println("Col: ");
-                xPos=scan.nextInt();
-            }
-        }
-        updatexList(xPos);
-        updateyList(yPos);
-
+        
         System.out.println("Orientation (right/up): ");
         String orient=scan.nextLine();
         boolean vert;
@@ -167,17 +136,7 @@ public class Game
         System.out.println("Col: ");
         int xPos=scan.nextInt();
 
-        for(int i=0; i<xList.size()-1;i++){
-            if(xPos==xList.get(i)&&yPos==yList.get(i)){
-                System.out.println("Cannot put ships on top of each other");
-                System.out.println("Location of Battleship: \nRow: ");
-                yPos=scan.nextInt();
-                System.out.println("Col: ");
-                xPos=scan.nextInt();
-            }
-        }
-        updatexList(xPos);
-        updateyList(yPos);
+        
 
         System.out.println("Orientation (right/up): ");
         String orient=scan.nextLine();
