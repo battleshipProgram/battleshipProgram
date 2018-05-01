@@ -62,7 +62,19 @@ public class Opponent
         }
         return false;
     }
-
+    
+    /**
+     * The setShips() method sets the top left coordinate of each ship of 
+     * the Opponent, which is a computer. It does so with a random x and y
+     * position, and then creating a new coordinate out of it, which is added
+     * to an ArrayList of Coordinates. The method then checks to see if the
+     * random positions generated for xPos and yPos are in the ArrayList
+     * of coordinates that have already been given for the ships, and 
+     * regenerates xPos and yPos if necessary.
+     * @param: none
+     * @return: none (void)
+     * @author: Matt Li
+     */
     public static void setShips()
     {
         for (Ship s: list)
