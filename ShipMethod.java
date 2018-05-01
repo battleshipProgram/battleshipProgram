@@ -18,4 +18,20 @@ public interface ShipMethod
      * Author: Anand Vadlamani 
      */
     public abstract int getLength();
+    
+    /**
+     * this method would prompt no return, but would change the x position of the ship
+     * @param: int value that becomes the x position 
+     * @return: none
+     * Author: Anand Vadlamani 
+     */
+    public abstract void setX(int value);
+    
+    /**
+     * this method would prompt no return, but would change the y position of the ship
+     * @param: int value that becomes the y position 
+     * @return: none
+     * Author: Anand Vadlamani 
+     */
+    public abstract void setY(int value);
 }

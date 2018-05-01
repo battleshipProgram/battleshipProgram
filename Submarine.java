@@ -50,7 +50,7 @@ public class Submarine extends Ship
      * @return: none, void return type
      * Author: Anand Vadlamani 
      */
-    public void setXPos(int x)
+    public void setX(int x)
     {
         xPos = x;
     }
@@ -61,7 +61,7 @@ public class Submarine extends Ship
      * @return: none, void return type
      * Author: Anand Vadlamani 
      */
-    public void setYPos(int x)
+    public void setY(int x)
     {
         yPos = x;
     }
