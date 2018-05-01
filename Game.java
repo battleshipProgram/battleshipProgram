@@ -10,32 +10,132 @@ import java.util.ArrayList;
  */
 public class Game
 {
-    private ArrayList<Integer> xList;
-    private ArrayList<Integer> yList;
     private Player p;
     private Board playerBoard;
     private Opponent o; 
     public Game()
     {
-        xList=new ArrayList<Integer>();
-        yList=new ArrayList<Integer>();
         playerBoard=new Board();
         Ship sub=createSub();
         Ship gun=createGun();
         Ship car=createCarrier();
         Ship battle=createBattle();
-        
 
     }
 
-    public void updatexList(int x){
-        xList.add(x);
+    
+    public boolean overlapSubGun(Ship s,Ship g)
+    {
+        int count=0;
+        for(Coordinate i:s.getCoordinates()){
+            for(Coordinate j:g.getCoordinates()){
+                if(i.getX()==j.getX()&&i.getY()==j.getY()){
+                    count++;
+                }
+            }
+        }
+
+        if(count>0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public boolean overlapSubCarrier(Ship s, Ship c)
+    {
+        int count=0;
+        for(Coordinate i:s.getCoordinates()){
+            for(Coordinate j:c.getCoordinates()){
+                if(i.getX()==j.getX()&&i.getY()==j.getY()){
+                    count++;
+                }
+            }
+        }
+
+        if(count>0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public boolean overlapSubBattle(Ship s,Ship b)
+    {
+        int count=0;
+        for(Coordinate i:s.getCoordinates()){
+            for(Coordinate j:b.getCoordinates()){
+                if(i.getX()==j.getX()&&i.getY()==j.getY()){
+                    count++;
+                }
+            }
+        }
+
+        if(count>0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public boolean overlapGunCar(Ship g,Ship c)
+    {
+        int count=0;
+        for(Coordinate i:g.getCoordinates()){
+            for(Coordinate j:c.getCoordinates()){
+                if(i.getX()==j.getX()&&i.getY()==j.getY()){
+                    count++;
+                }
+            }
+        }
+
+        if(count>0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public boolean overlapGunBattle(Ship g,Ship b)
+    {
+        int count=0;
+        for(Coordinate i:g.getCoordinates()){
+            for(Coordinate j:b.getCoordinates()){
+                if(i.getX()==j.getX()&&i.getY()==j.getY()){
+                    count++;
+                }
+            }
+        }
+
+        if(count>0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public boolean overlapCarBattle(Ship c,Ship b)
+    {
+        int count=0;
+        for(Coordinate i:c.getCoordinates()){
+            for(Coordinate j:b.getCoordinates()){
+                if(i.getX()==j.getX()&&i.getY()==j.getY()){
+                    count++;
+                }
+            }
+        }
+
+        if(count>0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
-    public void updateyList(int y){
-        yList.add(y);
-    }
-
+    
+    
+    
     public Ship createSub()
     {
         Scanner scan=new Scanner(System.in);
@@ -43,18 +143,6 @@ public class Game
         int yPos=scan.nextInt();
         System.out.println("Col: ");
         int xPos=scan.nextInt();
-
-        for(int i=0; i<xList.size()-1;i++){
-            if(xPos==xList.get(i)&&yPos==yList.get(i)){
-                System.out.println("Cannot put ships on top of each other");
-                System.out.println("Location of Submarine: \nRow: ");
-                yPos=scan.nextInt();
-                System.out.println("Col: ");
-                xPos=scan.nextInt();
-            }
-        }
-        updatexList(xPos);
-        updateyList(yPos);
 
         System.out.println("Orientation (right/up): ");
         String orient=scan.nextLine();
@@ -85,18 +173,6 @@ public class Game
         System.out.println("Col: ");
         int xPos=scan.nextInt();
 
-        for(int i=0; i<xList.size()-1;i++){
-            if(xPos==xList.get(i)&&yPos==yList.get(i)){
-                System.out.println("Cannot put ships on top of each other");
-                System.out.println("Location of Gunboat: \nRow: ");
-                yPos=scan.nextInt();
-                System.out.println("Col: ");
-                xPos=scan.nextInt();
-            }
-        }
-        updatexList(xPos);
-        updateyList(yPos);
-
         System.out.println("Orientation (right/up): ");
         String orient=scan.nextLine();
         boolean vert;
@@ -126,18 +202,6 @@ public class Game
         System.out.println("Col: ");
         int xPos=scan.nextInt();
 
-        for(int i=0; i<xList.size()-1;i++){
-            if(xPos==xList.get(i)&&yPos==yList.get(i)){
-                System.out.println("Cannot put ships on top of each other");
-                System.out.println("Location of Carrier: \nRow: ");
-                yPos=scan.nextInt();
-                System.out.println("Col: ");
-                xPos=scan.nextInt();
-            }
-        }
-        updatexList(xPos);
-        updateyList(yPos);
-
         System.out.println("Orientation (right/up): ");
         String orient=scan.nextLine();
         boolean vert;
@@ -166,18 +230,6 @@ public class Game
         int yPos=scan.nextInt();
         System.out.println("Col: ");
         int xPos=scan.nextInt();
-
-        for(int i=0; i<xList.size()-1;i++){
-            if(xPos==xList.get(i)&&yPos==yList.get(i)){
-                System.out.println("Cannot put ships on top of each other");
-                System.out.println("Location of Battleship: \nRow: ");
-                yPos=scan.nextInt();
-                System.out.println("Col: ");
-                xPos=scan.nextInt();
-            }
-        }
-        updatexList(xPos);
-        updateyList(yPos);
 
         System.out.println("Orientation (right/up): ");
         String orient=scan.nextLine();
