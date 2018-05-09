@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public abstract class Ship implements ShipMethod
 {
     private int length; 
-    Coordinate c; 
+    private Coordinate c; 
     private ArrayList<Coordinate> coordinates;
     private boolean orient;
     /**
@@ -25,11 +25,12 @@ public abstract class Ship implements ShipMethod
      * @return: none. this is a constructor
      * Author: Anand Vadlamani 
      */
-    public Ship(int xPos,int yPos,boolean vert)
+    public Ship(int xPos,int yPos,boolean vert, int l)
     {
         c = new Coordinate(xPos,yPos);
         coordinates=new ArrayList<Coordinate>();
         coordinates.add(c);
+        length=l;
         if(vert)
         {
           orient = true;

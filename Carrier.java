@@ -26,7 +26,7 @@ public class Carrier extends Ship
      */
     public Carrier(int xPos, int yPos,boolean vert)
     {
-        super(xPos,yPos,vert);
+        super(xPos,yPos,vert,4);
         length = 4;
     }
     

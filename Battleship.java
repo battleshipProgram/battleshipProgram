@@ -25,7 +25,7 @@ public class Battleship extends Ship
      */
     public Battleship(int xPos, int yPos,boolean vert)
     {
-        super(xPos,yPos,vert);
+        super(xPos,yPos,vert,5);
         length = 5; 
     }
     

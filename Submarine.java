@@ -29,8 +29,9 @@ public class Submarine extends Ship
      */
     public Submarine(int xPos, int yPos,boolean vert)
     {
-        super(xPos,yPos,vert);
-        length = 2;
+        super(xPos,yPos,vert,2);
+        length=2;
+        
     }
     
     /**
