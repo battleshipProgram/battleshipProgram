@@ -20,27 +20,35 @@ public class Game
         Ship gun=createGun();
         Ship car=createCarrier();
         Ship battle=createBattle();
-        if(overlapSubGun(sub,gun)){
-            System.out.println("The Sub and the Gunship are overlapping, please reenter coordinates");
+        boolean overlap=(overlapSubGun(sub,gun)&&overlapSubCarrier(sub,car)&&overlapSubBattle(sub,battle)&&overlapGunCarrier(gun,car)&&overlapGunBattle(gun,battle)&&overlapCarrierBattle(car,battle));
+        while(overlap){
+            if(overlapSubGun(sub,gun)){
+                System.out.println("The Sub and the Gunship are overlapping, please reenter coordinates");
+            }
+            else if(overlapSubCarrier(sub,car)){
+                System.out.println("The Sub and the Carrier are overlapping, please reenter coordinates");
+            }
+            else if(overlapSubBattle(sub,battle)){
+                System.out.println("The Sub and the Battleship are overlapping, please reenter coordinates");
+            }
+            else if(overlapGunCarrier(gun,car)){
+                System.out.println("The Gunship and the Carrier are overlapping, please reenter coordinates");
+            }
+            else if(overlapGunBattle(gun,battle)){
+                System.out.println("The Gunship and the Battleship are overlapping, please reenter coordinates");
+            }
+            else if(overlapCarrierBattle(car,battle)){
+                System.out.println("The Carrier and the Battleship are overlapping, please reenter coordinates");
+            }
+            sub=createSub();
+            gun=createGun();
+            car=createCarrier();
+            battle=createBattle();
+            overlap=(overlapSubGun(sub,gun)&&overlapSubCarrier(sub,car)&&overlapSubBattle(sub,battle)&&overlapGunCarrier(gun,car)&&overlapGunBattle(gun,battle)&&overlapCarrierBattle(car,battle));
         }
-        else if(overlapSubCarrier(sub,car)){
-            System.out.println("The Sub and the Carrier are overlapping, please reenter coordinates");
-        }
-        else if(overlapSubBattle(sub,battle)){
-            System.out.println("The Sub and the Battleship are overlapping, please reenter coordinates");
-        }
-        else if(overlapGunCarrier(gun,car)){
-            System.out.println("The Gunship and the Carrier are overlapping, please reenter coordinates");
-        }
-        else if(overlapGunBattle(gun,battle)){
-            System.out.println("The Gunship and the Battleship are overlapping, please reenter coordinates");
-        }
-        else if(overlapCarrierBattle(car,battle)){
-            System.out.println("The Carrier and the Battleship are overlapping, please reenter coordinates");
-        }
+        //o=new Opponent();
     }
 
-    
     public boolean overlapSubGun(Ship s,Ship g)
     {
         int count=0;
@@ -59,6 +67,7 @@ public class Game
             return false;
         }
     }
+
     public boolean overlapSubCarrier(Ship s, Ship c)
     {
         int count=0;
@@ -77,6 +86,7 @@ public class Game
             return false;
         }
     }
+
     public boolean overlapSubBattle(Ship s,Ship b)
     {
         int count=0;
@@ -95,6 +105,7 @@ public class Game
             return false;
         }
     }
+
     public boolean overlapGunCarrier(Ship g,Ship c)
     {
         int count=0;
@@ -113,6 +124,7 @@ public class Game
             return false;
         }
     }
+
     public boolean overlapGunBattle(Ship g,Ship b)
     {
         int count=0;
@@ -131,6 +143,7 @@ public class Game
             return false;
         }
     }
+
     public boolean overlapCarrierBattle(Ship c,Ship b)
     {
         int count=0;
@@ -150,9 +163,6 @@ public class Game
         }
     }
 
-    
-    
-    
     public Ship createSub()
     {
         Scanner scan=new Scanner(System.in);
