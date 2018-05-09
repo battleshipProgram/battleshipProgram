@@ -46,7 +46,23 @@ public class Game
             battle=createBattle();
             overlap=(overlapSubGun(sub,gun)&&overlapSubCarrier(sub,car)&&overlapSubBattle(sub,battle)&&overlapGunCarrier(gun,car)&&overlapGunBattle(gun,battle)&&overlapCarrierBattle(car,battle));
         }
-        //o=new Opponent();
+
+        if(overlapSubCarrier(sub,car)){
+            System.out.println("The Sub and the Carrier are overlapping, please reenter coordinates");
+        }
+        if(overlapSubBattle(sub,battle)){
+            System.out.println("The Sub and the Battleship are overlapping, please reenter coordinates");
+        }
+        if(overlapGunCarrier(gun,car)){
+            System.out.println("The Gunship and the Carrier are overlapping, please reenter coordinates");
+        }
+        if(overlapGunBattle(gun,battle)){
+            System.out.println("The Gunship and the Battleship are overlapping, please reenter coordinates");
+        }
+        if(overlapCarrierBattle(car,battle)){
+            System.out.println("The Carrier and the Battleship are overlapping, please reenter coordinates");
+        }
+
     }
 
     public boolean overlapSubGun(Ship s,Ship g)
@@ -163,16 +179,17 @@ public class Game
         }
     }
 
+   
     public Ship createSub()
     {
         Scanner scan=new Scanner(System.in);
-        System.out.println("Location of Submarine: \nRow: ");
+        System.out.print("Location of Submarine: \nRow: ");
         int yPos=scan.nextInt();
-        System.out.println("Col: ");
+        System.out.print("\nCol: ");
         int xPos=scan.nextInt();
 
-        System.out.println("Orientation (right/up): ");
-        String orient=scan.nextLine();
+        System.out.print("\nOrientation (right/up): ");
+        String orient=scan.next();
         boolean vert;
         if(orient.equals("right")){
             vert=false;
@@ -195,13 +212,13 @@ public class Game
     public Ship createGun()
     {
         Scanner scan=new Scanner(System.in);
-        System.out.println("Location of Gunboat: \nRow: ");
+        System.out.print("\nLocation of Gunboat: \nRow: ");
         int yPos=scan.nextInt();
-        System.out.println("Col: ");
+        System.out.print("\nCol: ");
         int xPos=scan.nextInt();
 
-        System.out.println("Orientation (right/up): ");
-        String orient=scan.nextLine();
+        System.out.print("\nOrientation (right/up): ");
+        String orient=scan.next();
         boolean vert;
         if(orient.equals("right")){
             vert=false;
@@ -224,13 +241,13 @@ public class Game
     public Ship createCarrier()
     {
         Scanner scan=new Scanner(System.in);
-        System.out.println("Location of Carrier: \nRow: ");
+        System.out.print("\nLocation of Carrier: \nRow: ");
         int yPos=scan.nextInt();
-        System.out.println("Col: ");
+        System.out.print("\nCol: ");
         int xPos=scan.nextInt();
 
-        System.out.println("Orientation (right/up): ");
-        String orient=scan.nextLine();
+        System.out.print("\nOrientation (right/up): ");
+        String orient=scan.next();
         boolean vert;
         if(orient.equals("right")){
             vert=false;
@@ -253,13 +270,13 @@ public class Game
     public Ship createBattle()
     {
         Scanner scan=new Scanner(System.in);
-        System.out.println("Location of Battleship: \nRow: ");
+        System.out.print("\nLocation of Battleship: \nRow: ");
         int yPos=scan.nextInt();
-        System.out.println("Col: ");
+        System.out.print("\nCol: ");
         int xPos=scan.nextInt();
 
-        System.out.println("Orientation (right/up): ");
-        String orient=scan.nextLine();
+        System.out.print("\nOrientation (right/up): ");
+        String orient=scan.next();
         boolean vert;
         if(orient.equals("right")){
             vert=false;

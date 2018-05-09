@@ -28,6 +28,7 @@ public abstract class Ship implements ShipMethod
     public Ship(int xPos,int yPos,boolean vert)
     {
         c = new Coordinate(xPos,yPos);
+        coordinates=new ArrayList<Coordinate>();
         coordinates.add(c);
         if(vert)
         {
