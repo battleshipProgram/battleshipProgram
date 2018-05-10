@@ -47,21 +47,7 @@ public class Game
             overlap=(overlapSubGun(sub,gun)&&overlapSubCarrier(sub,car)&&overlapSubBattle(sub,battle)&&overlapGunCarrier(gun,car)&&overlapGunBattle(gun,battle)&&overlapCarrierBattle(car,battle));
         }
 
-        if(overlapSubCarrier(sub,car)){
-            System.out.println("The Sub and the Carrier are overlapping, please reenter coordinates");
-        }
-        if(overlapSubBattle(sub,battle)){
-            System.out.println("The Sub and the Battleship are overlapping, please reenter coordinates");
-        }
-        if(overlapGunCarrier(gun,car)){
-            System.out.println("The Gunship and the Carrier are overlapping, please reenter coordinates");
-        }
-        if(overlapGunBattle(gun,battle)){
-            System.out.println("The Gunship and the Battleship are overlapping, please reenter coordinates");
-        }
-        if(overlapCarrierBattle(car,battle)){
-            System.out.println("The Carrier and the Battleship are overlapping, please reenter coordinates");
-        }
+        
 
     }
 
@@ -193,34 +179,47 @@ public class Game
         if(orient.equals("right")){
             vert=false;
         }
-        else{
+        else if(orient.equals("up")){
             vert=true;
+        }
+        else{
+            System.out.println("Invalid input, defaulted to right");
+            vert=false;
         }
 
         Ship sub=new Submarine(xPos,yPos,vert);
+        int count=0;
         for(Coordinate c:sub.getCoordinates()){
-            while(c.getX()>9||c.getY()>9){
-                System.out.println("Invalid input, REEnter coordinates: ");
-                System.out.print("Location of Submarine: \nRow: ");
-                yPos=scan.nextInt();
-                System.out.print("\nCol: ");
-                xPos=scan.nextInt();
+            if(c.getX()>9||c.getY()>9){
+                count++;
+            }
+        }
+        while(count>0){
+            System.out.println("Invalid input, Reenter coordinates: ");
+            System.out.print("Location of Submarine: \nRow: ");
+            yPos=scan.nextInt();
+            System.out.print("\nCol: ");
+            xPos=scan.nextInt();
 
-                System.out.print("\nOrientation (right/up): ");
-                orient=scan.next();
+            System.out.print("\nOrientation (right/up): ");
+            orient=scan.next();
 
-                if(orient.equals("right")){
-                    vert=false;
+            if(orient.equals("right")){
+                vert=false;
+            }
+            else if(orient.equals("up")){
+                vert=true;
+            }
+            else{
+                System.out.println("Invalid input, defaulted to right");
+                vert=false;
+            }
+            count=0;
+            sub=new Submarine(xPos,yPos,vert);
+            for(Coordinate c:sub.getCoordinates()){
+                if(c.getX()>9||c.getY()>9){
+                    count++;
                 }
-                else if(orient.equals("up")){
-                    vert=true;
-                }
-                else{
-                    System.out.println("Invalid input, defaulted to right");
-                    vert=false;
-                }
-
-                sub=new Submarine(xPos,yPos,vert);
             }
         }
         return sub;
@@ -250,6 +249,40 @@ public class Game
         }
 
         Ship gun=new Gunboat(xPos,yPos,vert);
+        int count=0;
+        for(Coordinate c:gun.getCoordinates()){
+            if(c.getX()>9||c.getY()>9){
+                count++;
+            }
+        }
+        while(count>0){
+            System.out.println("Invalid input, Reenter coordinates: ");
+            System.out.print("Location of Gunboat: \nRow: ");
+            yPos=scan.nextInt();
+            System.out.print("\nCol: ");
+            xPos=scan.nextInt();
+
+            System.out.print("\nOrientation (right/up): ");
+            orient=scan.next();
+
+            if(orient.equals("right")){
+                vert=false;
+            }
+            else if(orient.equals("up")){
+                vert=true;
+            }
+            else{
+                System.out.println("Invalid input, defaulted to right");
+                vert=false;
+            }
+            count=0;
+            gun=new Gunboat(xPos,yPos,vert);
+            for(Coordinate c:gun.getCoordinates()){
+                if(c.getX()>9||c.getY()>9){
+                    count++;
+                }
+            }
+        }
         return gun;
 
     }
@@ -275,7 +308,42 @@ public class Game
             System.out.println("Invalid input, defaulted to right");
             vert=false;
         }
+
         Ship car=new Carrier(xPos,yPos,vert);
+        int count=0;
+        for(Coordinate c:car.getCoordinates()){
+            if(c.getX()>9||c.getY()>9){
+                count++;
+            }
+        }
+        while(count>0){
+            System.out.println("Invalid input, Reenter coordinates: ");
+            System.out.print("Location of Carrier: \nRow: ");
+            yPos=scan.nextInt();
+            System.out.print("\nCol: ");
+            xPos=scan.nextInt();
+
+            System.out.print("\nOrientation (right/up): ");
+            orient=scan.next();
+
+            if(orient.equals("right")){
+                vert=false;
+            }
+            else if(orient.equals("up")){
+                vert=true;
+            }
+            else{
+                System.out.println("Invalid input, defaulted to right");
+                vert=false;
+            }
+            count=0;
+            car=new Carrier(xPos,yPos,vert);
+            for(Coordinate c:car.getCoordinates()){
+                if(c.getX()>9||c.getY()>9){
+                    count++;
+                }
+            }
+        }
         return car;
 
     }
@@ -303,6 +371,40 @@ public class Game
         }
 
         Ship battle=new Battleship(xPos,yPos,vert);
+        int count=0;
+        for(Coordinate c:battle.getCoordinates()){
+            if(c.getX()>9||c.getY()>9){
+                count++;
+            }
+        }
+        while(count>0){
+            System.out.println("Invalid input, Reenter coordinates: ");
+            System.out.print("Location of Battleship: \nRow: ");
+            yPos=scan.nextInt();
+            System.out.print("\nCol: ");
+            xPos=scan.nextInt();
+
+            System.out.print("\nOrientation (right/up): ");
+            orient=scan.next();
+
+            if(orient.equals("right")){
+                vert=false;
+            }
+            else if(orient.equals("up")){
+                vert=true;
+            }
+            else{
+                System.out.println("Invalid input, defaulted to right");
+                vert=false;
+            }
+            count=0;
+            battle=new Battleship(xPos,yPos,vert);
+            for(Coordinate c:battle.getCoordinates()){
+                if(c.getX()>9||c.getY()>9){
+                    count++;
+                }
+            }
+        }
         return battle;
 
     }
