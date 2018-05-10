@@ -13,7 +13,12 @@ public class PlayerTester
 {
     public static void main (String [] args)
     {
-        //Player player = new Player(Submarine s, Gunboat g, Carrier c, Battleship b, Board xd);
+        Submarine s = new Submarine(3, 3, true);
+        Gunboat g = new Gunboat(5, 5, false);
+        Carrier c = new Carrier(5, 7, true);
+        Battleship b = new Battleship(1, 4, true);
+        Board xd = new Board();
+        Player player = new Player(s, g,  c, b, xd);
         
         // tests the guess method. will return true if the player's guess hits a coordinate
         // in the opponent's array list of ships
