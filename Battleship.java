@@ -48,7 +48,7 @@ public class Battleship extends Ship
      */
     public void setX(int x)
     {
-        xPos = x;
+        super.setX(x);
     }
     
     /**
@@ -57,8 +57,8 @@ public class Battleship extends Ship
      * @return: none, void return type
      * Author: Anand Vadlamani 
      */
-    public void setY(int x)
+    public void setY(int y)
     {
-        yPos = x;
+        super.setY(y);
     }
 }

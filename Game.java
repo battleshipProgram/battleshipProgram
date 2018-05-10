@@ -187,10 +187,10 @@ public class Game
             vert=false;
         }
 
-        Ship sub=new Submarine(xPos,yPos,vert);
+        Ship sub=new Submarine(xPos-1,yPos-1,vert);
         int count=0;
         for(Coordinate c:sub.getCoordinates()){
-            if(c.getX()>9||c.getY()>9){
+            if(c.getX()>10||c.getY()>10){
                 count++;
             }
         }
@@ -215,9 +215,9 @@ public class Game
                 vert=false;
             }
             count=0;
-            sub=new Submarine(xPos,yPos,vert);
+            sub=new Submarine(xPos-1,yPos-1,vert);
             for(Coordinate c:sub.getCoordinates()){
-                if(c.getX()>9||c.getY()>9){
+                if(c.getX()>10||c.getY()>10){
                     count++;
                 }
             }
@@ -248,10 +248,10 @@ public class Game
             vert=false;
         }
 
-        Ship gun=new Gunboat(xPos,yPos,vert);
+        Ship gun=new Gunboat(xPos-1,yPos-1,vert);
         int count=0;
         for(Coordinate c:gun.getCoordinates()){
-            if(c.getX()>9||c.getY()>9){
+            if(c.getX()>10||c.getY()>10){
                 count++;
             }
         }
@@ -276,9 +276,9 @@ public class Game
                 vert=false;
             }
             count=0;
-            gun=new Gunboat(xPos,yPos,vert);
+            gun=new Gunboat(xPos-1,yPos-1,vert);
             for(Coordinate c:gun.getCoordinates()){
-                if(c.getX()>9||c.getY()>9){
+                if(c.getX()>10||c.getY()>10){
                     count++;
                 }
             }
@@ -309,10 +309,10 @@ public class Game
             vert=false;
         }
 
-        Ship car=new Carrier(xPos,yPos,vert);
+        Ship car=new Carrier(xPos-1,yPos-1,vert);
         int count=0;
         for(Coordinate c:car.getCoordinates()){
-            if(c.getX()>9||c.getY()>9){
+            if(c.getX()>10||c.getY()>10){
                 count++;
             }
         }
@@ -337,9 +337,9 @@ public class Game
                 vert=false;
             }
             count=0;
-            car=new Carrier(xPos,yPos,vert);
+            car=new Carrier(xPos-1,yPos-1,vert);
             for(Coordinate c:car.getCoordinates()){
-                if(c.getX()>9||c.getY()>9){
+                if(c.getX()>10||c.getY()>10){
                     count++;
                 }
             }
@@ -370,10 +370,10 @@ public class Game
             vert=false;
         }
 
-        Ship battle=new Battleship(xPos,yPos,vert);
+        Ship battle=new Battleship(xPos-1,yPos-1,vert);
         int count=0;
         for(Coordinate c:battle.getCoordinates()){
-            if(c.getX()>9||c.getY()>9){
+            if(c.getX()>10||c.getY()>10){
                 count++;
             }
         }
@@ -398,9 +398,9 @@ public class Game
                 vert=false;
             }
             count=0;
-            battle=new Battleship(xPos,yPos,vert);
+            battle=new Battleship(xPos-1,yPos-1,vert);
             for(Coordinate c:battle.getCoordinates()){
-                if(c.getX()>9||c.getY()>9){
+                if(c.getX()>10||c.getY()>10){
                     count++;
                 }
             }
