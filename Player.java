@@ -22,7 +22,7 @@ public class Player
      * @return: it's a constructor for gods sake there is no return
      * Author: Allen Ding
      */
-    public Player(Ship s, Ship g, Ship c, Ship b, Board xd)
+    public Player(Submarine s, Gunboat g, Carrier c, Battleship b, Board xd)
     {
         list.add(s);
         list.add(g);
