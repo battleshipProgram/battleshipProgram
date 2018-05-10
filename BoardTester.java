@@ -2,7 +2,7 @@
 /**
  * BoardTester.java  
  *
- * @author:anand vadlamani 
+ * @author: Matt Li
  * Assignment #:
  * 
  * Brief Program Description:
