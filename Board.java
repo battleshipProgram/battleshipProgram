@@ -24,7 +24,7 @@ public class Board
         {
             for(int j = 0; j < grid[i].length; j++)
             {
-                grid[i][j] = "O";
+                grid[i][j] = "_";
             }
             
         }
@@ -37,7 +37,7 @@ public class Board
      * @author Andrew
      */
     {
-        grid[xPos][yPos]="X";
+        grid[xPos - 1][yPos - 1]="X";
     }
     public void opponentMiss(int xPos, int yPos)
     /**
@@ -47,7 +47,7 @@ public class Board
      * @author Andrew
      */
     {
-        grid[xPos][yPos]="O";
+        grid[xPos - 1][yPos - 1]="O";
     }
     public void playerHit(int xPos, int yPos)
     /**
@@ -57,7 +57,7 @@ public class Board
      * @author Andrew
      */
     {
-        grid[xPos][yPos]="X";
+        grid[xPos - 1][yPos - 1]="X";
     }
     public void playerMiss(int xPos, int yPos)
     /**
@@ -67,7 +67,7 @@ public class Board
      * @author Andrew
      */
     {
-        grid[xPos][yPos]="O";
+        grid[xPos - 1][yPos - 1]="O";
     }
     /**
      * prints the board- Anand
