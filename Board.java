@@ -20,6 +20,14 @@ public class Board
      */
     {
         grid = new String[10][10];
+        for(int i = 0; i < grid.length; i++)
+        {
+            for(int j = 0; j < grid[i].length; j++)
+            {
+                grid[i][j] = "O";
+            }
+            
+        }
     }
     public void opponentHit(int xPos, int yPos)
     /**
@@ -62,18 +70,33 @@ public class Board
         grid[xPos][yPos]="O";
     }
     /**
-     * prints the board 
+     * prints the board- Anand
+     * added spacing as well as labeling columns and rows for a good layout of the board- Allen
      * @param: none
      * @return none, its a void return type
-     * Author: Anand Vadlamani 
+     * Author: Anand Vadlamani/Allen Ding
      */
     public void printBoard()
     {
+        System.out.print(" ");
+        for(int i = 1; i <= 10; i++)
+        {
+            System.out.print("   " + i);
+        }
+        System.out.println();
         for(int i = 0; i < grid.length; i++)
         {
+            if(i < 9)
+            {
+                System.out.print(i + 1 + "   ");
+            }
+            else
+            {
+                System.out.print(i + 1 + "  ");
+            }
             for(int j = 0; j < grid[i].length; j++)
             {
-                System.out.print(grid[i][j]);
+                System.out.print(grid[i][j]+ "   " );
             }
             System.out.println(); 
         }
