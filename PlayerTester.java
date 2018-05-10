@@ -2,7 +2,7 @@
 /**
  * PlayerTester.java  
  *
- * @author:anand vadlamani 
+ * @author:matt li
  * Assignment #:
  * 
  * Brief Program Description:

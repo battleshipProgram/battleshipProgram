@@ -18,6 +18,7 @@ public abstract class Ship implements ShipMethod
     private Coordinate c; 
     private ArrayList<Coordinate> coordinates;
     private boolean orient;
+    private int x,y;
     /**
      * creates a ship object(note that the ship is an abstract object
      * and thus it could only be instantiated through polymorphism)
@@ -27,7 +28,9 @@ public abstract class Ship implements ShipMethod
      */
     public Ship(int xPos,int yPos,boolean vert, int l)
     {
-        c = new Coordinate(xPos,yPos);
+        x = xPos;
+        y = yPos; 
+        c = new Coordinate(x,y);
         coordinates=new ArrayList<Coordinate>();
         coordinates.add(c);
         length=l;
@@ -70,7 +73,10 @@ public abstract class Ship implements ShipMethod
      * @return: none
      * Author: Anand Vadlamani 
      */
-    public abstract void setX(int value);
+    public void setX(int value)
+    {
+        x = value;
+    }
     
     /**
      * this method would prompt no return, but would change the y position of the ship
@@ -78,7 +84,10 @@ public abstract class Ship implements ShipMethod
      * @return: none
      * Author: Anand Vadlamani 
      */
-    public abstract void setY(int value);
+    public void setY(int value)
+    {
+        y = value; 
+    }
     
     /** 
      * getCoordinates() - this method returns the arraylist of coordintaes that make up the ship 
@@ -89,6 +98,16 @@ public abstract class Ship implements ShipMethod
     public ArrayList<Coordinate> getCoordinates()
     {
         return coordinates; 
+    }
+    /**
+     * getCoordinate() - returns the principle coordinate of the ship
+     * @param: none 
+     * @return: Coordinate c, which is the principle coordinate 
+     * Author: Anand Vadlamani 
+     */
+    public Coordinate getCoordinate()
+    {
+        return c; 
     }
     
     /**
