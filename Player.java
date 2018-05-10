@@ -116,4 +116,14 @@ public class Player
             }
         }
     }
+    /**
+     * Returns the player's board
+     * @param: none
+     * @return: returns a Board object
+     * Author: Allen Ding
+     */
+    public Board getPlayerBoard()
+    {
+        return b;
+    }
 }

@@ -19,6 +19,7 @@ public class PlayerTester
         Battleship b = new Battleship(2, 5, true);
         Board xd = new Board();
         Player p = new Player(s, g, c, b, xd);
-        
+        p.getPlayerBoard().playerHit(5, 5);
+        p.getPlayerBoard().printBoard();
     }
 }
