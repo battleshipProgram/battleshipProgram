@@ -46,7 +46,7 @@ public abstract class Ship implements ShipMethod
         {
             for(int i = 1; i < length; i++)
             {
-                coordinates.add(new Coordinate(xPos, yPos + i)); 
+                coordinates.add(new Coordinate(xPos, yPos - i)); 
             }
         }
         else
@@ -76,6 +76,23 @@ public abstract class Ship implements ShipMethod
     public void setX(int value)
     {
         x = value;
+        c = new Coordinate(x,y);
+        coordinates=new ArrayList<Coordinate>();
+        coordinates.add(c);
+        if(orient)
+        {
+            for(int i = 1; i < length; i++)
+            {
+                coordinates.add(new Coordinate(x, y - i)); 
+            }
+        }
+        else
+        {
+            for(int i = 1; i < length; i++)
+            {
+                coordinates.add(new Coordinate(x + i, y)); 
+            }
+        }
     }
     
     /**
@@ -87,6 +104,23 @@ public abstract class Ship implements ShipMethod
     public void setY(int value)
     {
         y = value; 
+        c = new Coordinate(x,y);
+        coordinates=new ArrayList<Coordinate>();
+        coordinates.add(c);
+        if(orient)
+        {
+            for(int i = 1; i < length; i++)
+            {
+                coordinates.add(new Coordinate(x, y - i)); 
+            }
+        }
+        else
+        {
+            for(int i = 1; i < length; i++)
+            {
+                coordinates.add(new Coordinate(x + i, y)); 
+            }
+        }
     }
     
     /** 
