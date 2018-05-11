@@ -3,10 +3,11 @@
  * CarrierTester.java  
  *
  * @author: Anand Vadlamani
- * Assignment #:
- * 
+
  * Brief Program Description:
- * 
+ * This class is a tester for all the methods inside the class. 
+ * It tests the getLength() method, as well as the setX() 
+ * and the setY() methods. 
  *
  */
 public class CarrierTester
