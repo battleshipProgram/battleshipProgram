@@ -17,10 +17,10 @@ public class CoordinateTester
         Coordinate coordinate = new Coordinate (5, 5);
         
         //the getX() method should return the x-coordinate of the Coordinate object
-        coordinate.getX();
+        System.out.println(coordinate.getX());
         
         //the getX() method should return the x-coordinate of the Coordinate object
-        coordinate.getY();
+        System.out.println(coordinate.getY());
         
         //tests the toString() method
         System.out.println(coordinate);
