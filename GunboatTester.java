@@ -1,19 +1,19 @@
 
 /**
- * SubmarineTester.java  
+ * GunboatTester.java  
  *
- * @author: Anand Vadlamani
+ * @author: Anand Vadlamani 
  * Assignment #:
  * 
  * Brief Program Description:
  * 
  *
  */
-public class SubmarineTester
+public class GunboatTester
 {
     public static void main(String [] args)
     {
-        Ship s = new Submarine(5,5,true);
+        Ship s = new Gunboat(5,5,true);
         System.out.println(s.getLength());
         System.out.println(s.getCoordinates());
         

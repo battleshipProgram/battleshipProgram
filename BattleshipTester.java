@@ -1,6 +1,6 @@
 
 /**
- * SubmarineTester.java  
+ * BattleshipTester.java  
  *
  * @author: Anand Vadlamani
  * Assignment #:
@@ -9,16 +9,16 @@
  * 
  *
  */
-public class SubmarineTester
+public class BattleshipTester
 {
     public static void main(String [] args)
     {
-        Ship s = new Submarine(5,5,true);
+        Ship s = new Battleship(6,6,true);
         System.out.println(s.getLength());
         System.out.println(s.getCoordinates());
         
-        s.setX(6);
-        s.setY(6);
+        s.setX(7);
+        s.setY(7);
         
         System.out.println(s.getCoordinates());
     }
