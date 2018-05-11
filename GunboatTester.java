@@ -1,20 +1,20 @@
 
 /**
- * SubmarineTester.java  
+ * GunboatTester.java  
  *
- * @author: Anand Vadlamani
+ * @author: Anand Vadlamani 
 
  * Brief Program Description:
  * This class is a tester for all the methods inside the class. 
  * It tests the getLength() method, as well as the setX() 
  * and the setY() methods. 
- *
+ * 
  */
-public class SubmarineTester
+public class GunboatTester
 {
     public static void main(String [] args)
     {
-        Ship s = new Submarine(5,5,true);
+        Ship s = new Gunboat(5,5,true);
         System.out.println(s.getLength());
         System.out.println(s.getCoordinates());
         

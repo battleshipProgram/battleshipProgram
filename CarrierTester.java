@@ -1,6 +1,6 @@
 
 /**
- * SubmarineTester.java  
+ * CarrierTester.java  
  *
  * @author: Anand Vadlamani
 
@@ -10,11 +10,11 @@
  * and the setY() methods. 
  *
  */
-public class SubmarineTester
+public class CarrierTester
 {
     public static void main(String [] args)
     {
-        Ship s = new Submarine(5,5,true);
+        Ship s = new Carrier(5,5,true);
         System.out.println(s.getLength());
         System.out.println(s.getCoordinates());
         
