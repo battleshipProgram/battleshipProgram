@@ -117,6 +117,17 @@ public class Player
         }
     }
     /**
+     * returns the ArrayList of Ships that the player has
+     * @param: none
+     * @return: ArrayList
+     * @author: Matt Li
+     */
+    public ArrayList getShips()
+    {
+        return list;
+    }
+    
+    /**
      * Returns the player's board
      * @param: none
      * @return: returns a Board object

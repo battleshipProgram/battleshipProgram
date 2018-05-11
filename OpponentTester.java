@@ -19,9 +19,11 @@ public class OpponentTester
         Carrier c = new Carrier(7, 2, false);
         Battleship b = new Battleship(2, 5, true);
         
-        //creates the Opponent object
+        //creates the Opponent object and Player object
+        Board xd = new Board();
         Opponent opponent = new Opponent(s, g, c, b);
-        
+        Player player = new Player(s, g, c, b, xd);
+        //
         
         
     }
