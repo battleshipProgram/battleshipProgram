@@ -94,6 +94,16 @@ public class Opponent
             }
         }
     }
+    /**
+     * returns an arrayList of the opponent's ships.
+     * @param: none
+     * @return: arrayList of Ships
+     * @author: Allen Ding
+     */
+    public ArrayList getOpponentShips()
+    {
+        return list;
+    }
     
     
 }
