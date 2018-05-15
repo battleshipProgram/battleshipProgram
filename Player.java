@@ -2,7 +2,7 @@ import java.util.ArrayList;
 /**
  * Player.java  
  *
- * @author:
+ * @author: Allen Ding
  * Assignment #:
  * 
  * Brief Program Description:

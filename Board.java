@@ -2,7 +2,7 @@
 /**
  * board.java  
  *
- * @author:
+ * @author: Andrew Zuang and Anand Vadlamani 
  * Assignment #:
  * 
  * Brief Program Description:

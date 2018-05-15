@@ -219,6 +219,15 @@ public class Game
         }
     }
 
+    /**
+     * This method creates a submarine ship in the game class.
+     * It makes sure the inputs are valid, and checks the orientation
+     * entered so that it creates a ship of the appropriate 
+     * length and the appropriate orientation.
+     * @param: none
+     * @return: Ship, which is the ship being created.
+     * @Author: Andrew Zhuang
+     */
     public Ship createSub()
     {
         Scanner scan=new Scanner(System.in);
@@ -280,6 +289,15 @@ public class Game
 
     }
 
+    /**
+     * This method creates a gunboat ship in the game class.
+     * It makes sure the inputs are valid, and checks the orientation
+     * entered so that it creates a ship of the appropriate 
+     * length and the appropriate orientation.
+     * @param: none
+     * @return: Ship, which is the ship being created.
+     * @Author: Andrew Zhuang
+     */
     public Ship createGun()
     {
         Scanner scan=new Scanner(System.in);
@@ -341,6 +359,15 @@ public class Game
 
     }
 
+    /**
+     * This method creates a carrier ship in the game class.
+     * It makes sure the inputs are valid, and checks the orientation
+     * entered so that it creates a ship of the appropriate 
+     * length and the appropriate orientation.
+     * @param: none
+     * @return: Ship, which is the ship being created.
+     * @Author: Andrew Zhuang
+     */
     public Ship createCarrier()
     {
         Scanner scan=new Scanner(System.in);
@@ -402,6 +429,15 @@ public class Game
 
     }
 
+    /**
+     * This method creates a battleship ship in the game class.
+     * It makes sure the inputs are valid, and checks the orientation
+     * entered so that it creates a ship of the appropriate 
+     * length and the appropriate orientation.
+     * @param: none
+     * @return: Ship, which is the ship being created.
+     * @Author: Andrew Zhuang
+     */
     public Ship createBattle()
     {
         Scanner scan=new Scanner(System.in);
