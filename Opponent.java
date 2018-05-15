@@ -2,7 +2,7 @@ import java.util.ArrayList;
 /**
  * Opponent.java  
  *
- * @author: Matt Li
+ * @author: 
  * Assignment #:
  * 
  * Brief Program Description:
@@ -23,14 +23,11 @@ public class Opponent
      * @return: none. this is a constructor
      * Author: Anand Vadlamani 
      */
-    public Opponent(Submarine s, Gunboat g, Carrier c, Battleship b)
+    public Opponent()
     {
-        list.add(s);
-        list.add(g);
-        list.add(c);
-        list.add(b);
+
     }
-    
+
     /**
      * The guess(ArrayList<Ship> l) allows the ship to take a shot at a 
      * Player's ship. It hits a random xPos and yPos and if it hits any 
@@ -62,49 +59,68 @@ public class Opponent
         }
         return false;
     }
-    
+
     /**
-     * The setShips() method sets the top left coordinate of each ship of 
-     * the Opponent, which is a computer. It does so with a random x and y
-     * position, and then creating a new coordinate out of it, which is added
-     * to an ArrayList of Coordinates. The method then checks to see if the
-     * random positions generated for xPos and yPos are in the ArrayList
-     * of coordinates that have already been given for the ships, and 
-     * regenerates xPos and yPos if necessary.
+     * Method that instantiates a submarine, gunboat, carrier, and battleship
+     * while also checking that it stays within the board
      * @param: none
      * @return: none (void)
-     * @author: Matt Li
+     * @author: Allen Ding
      */
     public static void setShips()
     {
-        for (Ship s: list)
+        for(int i = 2; i <= 5; i++)
         {
-            for (Coordinate c: s.getCoordinates())
+            xPos = (int)(Math.random() * (10 - i) + 1);
+            yPos = (int)(Math.random() * (10) + 1);
+            for(Ship s: list)
             {
-               ArrayList <Coordinate> coordinates = new ArrayList<Coordinate>();
-               xPos = (int)(Math.random()*10 + 1);
-               yPos = (int)(Math.random()*10 + 1);
-               Coordinate coordinate = new Coordinate (xPos, yPos);
-               coordinates.add(coordinate);
-               while (c.getX() == coordinate.getX() && c.getY() == coordinate.getY())
-               {
-                   xPos = (int)(Math.random()*10 + 1);
-                   yPos = (int)(Math.random()*10 + 1);
-               }               
+                for(Coordinate c: s.getCoordinates())
+                {
+                    for(int j = 0; j <= i; j++)
+                    {
+                        while(xPos + j == c.getX() || yPos + j == c.getY())
+                        {
+                            xPos = (int)(Math.random() * (10 - i) + 1);
+                            yPos = (int)(Math.random() * (10) + 1);
+                        }
+                    }
+                }
+            }
+
+            if(i == 2)
+            {
+                Submarine s = new Submarine(xPos, yPos, true);
+                list.add(s);
+            }
+            else if(i == 3)
+            {
+                Gunboat g = new Gunboat(xPos, yPos, true);
+                list.add(g);
+            }
+            else if(i == 4)
+            {
+                Carrier c = new Carrier(xPos, yPos, true);
+                list.add(c);
+            }
+            else
+            {
+                Battleship b = new Battleship(xPos, yPos, true);
+                list.add(b);
             }
         }
+
     }
-    
+
     /**
      * returns an arrayList of the opponent's ships.
      * @param: none
      * @return: arrayList of Ships
      * @author: Allen Ding
      */
-    public ArrayList getOpponentShips()
+    public ArrayList<Ship> getOpponentShips()
     {
         return list;
     }
-    
-    
+
 }

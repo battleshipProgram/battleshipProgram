@@ -14,17 +14,20 @@ public class OpponentTester
     public static void main (String [] args)
     {
         //creates the Ship objects necessary to be used in the Opponent object
-        Submarine s = new Submarine(3, 7, true);
-        Gunboat g = new Gunboat(5, 2, true);
-        Carrier c = new Carrier(7, 2, false);
-        Battleship b = new Battleship(2, 5, true);
+        
         
         //creates the Opponent object and Player object
         Board xd = new Board();
-        Opponent opponent = new Opponent(s, g, c, b);
-        Player player = new Player(s, g, c, b, xd);
-        //
-        
+        Opponent opponent = new Opponent();
+        opponent.setShips();
+        for(Ship s: opponent.getOpponentShips())
+        {
+            for(Coordinate c: s.getCoordinates())
+            {
+                xd.playerHit(c.getX(), c.getY());
+            }
+        }
+        xd.printBoard();
         
     }
 }
