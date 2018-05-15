@@ -69,6 +69,12 @@ public class Board
     {
         grid[xPos - 1][yPos - 1]="O";
     }
+    public void setShip(int x, int y){
+        grid[x][y]="#";
+    }
+    public String[][] getGrid(){
+        return grid;
+    }
     /**
      * prints the board- Anand
      * added spacing as well as labeling columns and rows for a good layout of the board- Allen

@@ -13,9 +13,11 @@ public class Game
     private Player p;
     private Board playerBoard;
     private Opponent o; 
+    private Board targets;
     public Game()
     {
         playerBoard=new Board();
+        targets=new Board();
         Ship sub=createSub();
         Ship gun=createGun();
         Ship car=createCarrier();
@@ -47,6 +49,59 @@ public class Game
             overlap=(overlapSubGun(sub,gun)||overlapSubCarrier(sub,car)||overlapSubBattle(sub,battle)||overlapGunCarrier(gun,car)||overlapGunBattle(gun,battle)||overlapCarrierBattle(car,battle));
         }
 
+        for(Coordinate c:sub.getCoordinates()){
+            playerBoard.setShip(c.getY(),c.getX());
+        }
+        for(Coordinate c:gun.getCoordinates()){
+            playerBoard.setShip(c.getY(),c.getX());
+        }
+        for(Coordinate c:car.getCoordinates()){
+            playerBoard.setShip(c.getY(),c.getX());
+        }
+        for(Coordinate c:battle.getCoordinates()){
+            playerBoard.setShip(c.getY(),c.getX());
+        }
+        System.out.println("\nYour Board: ");
+        playerBoard.printBoard();
+        System.out.println("\nLocation to shoot:\nRow: ");
+        Scanner scan=new Scanner(System.in);
+        int yShot=scan.nextInt();
+        System.out.println("\nColumn: ");
+        int xShot=scan.nextInt();
+        while(Math.abs(xShot-5)>5||Math.abs(yShot-5)>5){
+            System.out.println("Invalid location, reenter coordinates");
+            System.out.println("\nLocation to shoot:\nRow: ");
+            scan=new Scanner(System.in);
+            yShot=scan.nextInt();
+            System.out.println("\nColumn: ");
+            xShot=scan.nextInt();
+        }
+        ArrayList<Coordinate> allcoords=new ArrayList<Coordinate>();
+        for(Coordinate c:sub.getCoordinates()){
+            allcoords.add(c);
+        }
+        for(Coordinate c:gun.getCoordinates()){
+            allcoords.add(c);
+        }
+        for(Coordinate c:car.getCoordinates()){
+            allcoords.add(c);
+        }
+        for(Coordinate c:battle.getCoordinates()){
+            allcoords.add(c);
+        }
+        Coordinate shot=new Coordinate(xShot,yShot);
+        int hitCount=0;
+        for(Coordinate c:allcoords){
+            if(shot.equals(c)){
+                targets.playerHit(shot.getY(),shot.getX());
+                System.out.println("Nice shot!");
+                hitCount++;
+            }
+        }
+        if(hitCount==0){
+            System.out.println("Miss!");
+            targets.playerMiss(shot.getY(),shot.getX());
+        }
 
     }
 
