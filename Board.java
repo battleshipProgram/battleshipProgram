@@ -26,9 +26,10 @@ public class Board
             {
                 grid[i][j] = "_";
             }
-            
+
         }
     }
+
     public void opponentHit(int xPos, int yPos)
     /**
      * marks a hit as an X when the opponent hits the player's ship
@@ -37,8 +38,9 @@ public class Board
      * @author Andrew
      */
     {
-        grid[xPos - 1][yPos - 1]="X";
+        grid[yPos - 1][xPos - 1]="X";
     }
+
     public void opponentMiss(int xPos, int yPos)
     /**
      * marks a miss as O when the opponent misses the player's ships
@@ -47,8 +49,9 @@ public class Board
      * @author Andrew
      */
     {
-        grid[xPos - 1][yPos - 1]="O";
+        grid[yPos - 1][xPos - 1]="O";
     }
+
     public void playerHit(int xPos, int yPos)
     /**
      * marks a hit when the player hits an opposing ship
@@ -57,8 +60,11 @@ public class Board
      * @author Andrew
      */
     {
-        grid[xPos - 1][yPos - 1]="X";
+        
+            grid[yPos -1][xPos -1]="X";
+        
     }
+
     public void playerMiss(int xPos, int yPos)
     /**
      * marks a miss when the player misses an opposing ship
@@ -67,14 +73,17 @@ public class Board
      * @author Andrew
      */
     {
-        grid[xPos - 1][yPos - 1]="O";
+        grid[yPos - 1][xPos - 1]="O";
     }
+
     public void setShip(int x, int y){
         grid[x][y]="#";
     }
+
     public String[][] getGrid(){
         return grid;
     }
+
     /**
      * prints the board- Anand
      * added spacing as well as labeling columns and rows for a good layout of the board- Allen

@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+   import java.util.ArrayList;
 /**
  * Opponent.java  
  *
@@ -77,7 +77,7 @@ public class Opponent
             {
                 for(Coordinate c: s.getCoordinates())
                 {
-                    for(int j = 0; j <= i; j++)
+                    for(int j = 0; j < i; j++)
                     {
                         while(xPos + j == c.getX() || yPos + j == c.getY())
                         {
@@ -90,22 +90,22 @@ public class Opponent
 
             if(i == 2)
             {
-                Submarine s = new Submarine(xPos, yPos, true);
+                Submarine s = new Submarine(xPos, yPos, false);
                 list.add(s);
             }
             else if(i == 3)
             {
-                Gunboat g = new Gunboat(xPos, yPos, true);
+                Gunboat g = new Gunboat(xPos, yPos, false);
                 list.add(g);
             }
             else if(i == 4)
             {
-                Carrier c = new Carrier(xPos, yPos, true);
+                Carrier c = new Carrier(xPos, yPos, false);
                 list.add(c);
             }
             else
             {
-                Battleship b = new Battleship(xPos, yPos, true);
+                Battleship b = new Battleship(xPos, yPos, false);
                 list.add(b);
             }
         }
