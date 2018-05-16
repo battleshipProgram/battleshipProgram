@@ -42,7 +42,7 @@ public abstract class Ship implements ShipMethod
         {
             orient = false;
         }
-        if(vert)
+        if(orient)
         {
             for(int i = 1; i < length; i++)
             {
