@@ -70,7 +70,7 @@ public class Board
         grid[xPos - 1][yPos - 1]="O";
     }
     public void setShip(int x, int y){
-        grid[x][y]="#";
+        grid[x-1][y-1]="#";
     }
     public String[][] getGrid(){
         return grid;

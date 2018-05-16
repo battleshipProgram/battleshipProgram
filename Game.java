@@ -14,10 +14,14 @@ public class Game
     private Board playerBoard;
     private Opponent o; 
     private Board targets;
+    private Board opponentBoard;
     public Game()
     {
         playerBoard=new Board();
         targets=new Board();
+        o=new Opponent();
+        opponentBoard=new Board();
+        o.setShips();
         Ship sub=createSub();
         Ship gun=createGun();
         Ship car=createCarrier();
@@ -63,6 +67,14 @@ public class Game
         }
         System.out.println("\nYour Board: ");
         playerBoard.printBoard();
+        //adds ships to opponent's board
+        for(int x=0;x<o.getOpponentShips().size();x++){
+            for(Coordinate c:o.getOpponentShips().get(x).getCoordinates()){
+                opponentBoard.setShip(c.getX(),c.getY());
+            }
+        }
+        System.out.println("\n\n"); //////////////
+        opponentBoard.printBoard();
         System.out.println("\nLocation to shoot:\nRow: ");
         Scanner scan=new Scanner(System.in);
         int yShot=scan.nextInt();
@@ -76,32 +88,43 @@ public class Game
             System.out.println("\nColumn: ");
             xShot=scan.nextInt();
         }
-        ArrayList<Coordinate> allcoords=new ArrayList<Coordinate>();
-        for(Coordinate c:sub.getCoordinates()){
-            allcoords.add(c);
-        }
-        for(Coordinate c:gun.getCoordinates()){
-            allcoords.add(c);
-        }
-        for(Coordinate c:car.getCoordinates()){
-            allcoords.add(c);
-        }
-        for(Coordinate c:battle.getCoordinates()){
-            allcoords.add(c);
-        }
+        // ArrayList<Coordinate> allcoords=new ArrayList<Coordinate>();
+        // for(Coordinate c:sub.getCoordinates()){
+            // allcoords.add(c);
+        // }
+        // for(Coordinate c:gun.getCoordinates()){
+            // allcoords.add(c);
+        // }
+        // for(Coordinate c:car.getCoordinates()){
+            // allcoords.add(c);
+        // }
+        // for(Coordinate c:battle.getCoordinates()){
+            // allcoords.add(c);
+        // }
+
+        
+        
         Coordinate shot=new Coordinate(xShot,yShot);
-        int hitCount=0;
-        for(Coordinate c:allcoords){
-            if(shot.equals(c)){
-                targets.playerHit(shot.getY(),shot.getX());
-                System.out.println("Nice shot!");
-                hitCount++;
-            }
+        if(opponentBoard.getGrid()[yShot][xShot].equals("#")){
+            System.out.println("Nice shot!");
+            targets.playerHit(shot.getY(),shot.getX());
         }
-        if(hitCount==0){
+        else{
             System.out.println("Miss!");
             targets.playerMiss(shot.getY(),shot.getX());
         }
+        // int hitCount=0;
+        // for(Coordinate c:allcoords){
+            // if(shot.equals(c)){
+                // targets.playerHit(shot.getY(),shot.getX());
+                // System.out.println("Nice shot!");
+                // hitCount++;
+            // }
+        // }
+        // if(hitCount==0){
+            // System.out.println("Miss!");
+            // targets.playerMiss(shot.getY(),shot.getX());
+        // }
 
     }
 
