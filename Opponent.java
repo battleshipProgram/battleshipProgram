@@ -2,7 +2,7 @@
 /**
  * Opponent.java  
  *
- * @author: 
+ * @author: Matt Li
  * Assignment #:
  * 
  * Brief Program Description:
