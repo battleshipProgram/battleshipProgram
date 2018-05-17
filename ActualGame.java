@@ -179,7 +179,7 @@ public class ActualGame
                 {
                     System.out.println("you missed...");
                     targets.playerMiss(xPos, yPos);
-                    
+                   
                 }
                 targets.printBoard();
                 
