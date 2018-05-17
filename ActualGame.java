@@ -209,7 +209,9 @@ public class ActualGame
         ArrayList<Coordinate> listOfShots=new ArrayList<Coordinate>();
         boolean conditionOne=true;
         boolean conditionTwo=true;
-        opponentBoard.printBoard();
+        //opponentBoard.printBoard();
+        while(opponentBoard.findHashtags() && p.getPlayerBoard().findHashtags())
+        {
         while(hit){
             while(conditionOne||conditionTwo){
                 System.out.println("\nLocation to shoot:\nRow: ");
@@ -256,17 +258,88 @@ public class ActualGame
             if(opponentBoard.getGrid()[yShot-1][xShot-1].equals("#")){
                 System.out.println("Nice shot!");
                 targets.playerHit(shot.getX(),shot.getY());
+                opponentBoard.playerHit(shot.getX(), shot.getY());
                 hit=true;
+                conditionOne=true;
+                conditionTwo=true;
             }
             else{
                 System.out.println("Miss!");
                 targets.playerMiss(shot.getX(),shot.getY());
                 hit=false;
+                conditionOne=false;
+                conditionTwo=false;
             }
             System.out.println("\nYour Shots: \n");
             targets.printBoard();
-            conditionOne=true;
-            conditionTwo=true;
+            
         }
+        int xPosO = 0;
+        int yPosO = 0;
+        boolean opponentHit = true;
+        boolean conditionThree = true;
+        boolean conditionFour = true;
+        ArrayList<Coordinate> listOfShotsO = new ArrayList<Coordinate>();
+        while(opponentHit){
+            while(conditionThree||conditionFour){
+                yPosO = (int)(Math.random() * 10 + 1);
+                xPosO = (int)(Math.random() * 10 + 1);
+                conditionThree=((Math.abs(xPosO-5)>5)||(Math.abs(yPosO-5)>5));
+                shot=new Coordinate(xPosO,yPosO);
+                listOfShotsO.add(shot);
+                int count=0;
+                for(int i=0;i<listOfShotsO.size()-1;i++){
+                    if(listOfShotsO.get(i).equals(shot)){
+                        count++;
+                    }
+                }
+
+                conditionFour=count>0;
+                // while(Math.abs(xShot-5)>5||Math.abs(yShot-5)>5){
+                // System.out.println("Invalid location, reenter coordinates");
+                // System.out.println("\nLocation to shoot:\nRow: ");
+                // scan=new Scanner(System.in);
+                // yShot=scan.nextInt();
+                // System.out.println("\nColumn: ");
+                // xShot=scan.nextInt();
+                // }
+                // //check for shooting in the same spot
+            }
+
+            // if(factor)
+            // {
+            // System.out.println("You hit!");
+
+            // }
+            // else
+            // {
+            // System.out.println("you missed...");
+            // targets.playerMiss(xPos, yPos);
+
+            // }
+            // targets.printBoard();
+
+
+            if(p.getPlayerBoard().getGrid()[yPosO-1][xPosO-1].equals("#")){
+                System.out.println("Opponent hit your ship at row " + yPosO + " and column " + xPosO);
+                p.getPlayerBoard().playerHit(shot.getX(),shot.getY());
+                opponentHit=true;
+                conditionThree=true;
+                conditionFour=true;
+            }
+            else{
+                System.out.println("Opponent guessed your ship at row " + yPosO + " and column " + xPosO +", but missed");
+                p.getPlayerBoard().playerMiss(shot.getX(),shot.getY());
+                opponentHit=false;
+                conditionThree=false;
+                conditionFour=false;
+            }
+            System.out.println("\nYour Board with Opponent Guesses/Hits: \n");
+            p.getPlayerBoard().printBoard();
+            
+        }
+    }
+        System.out.println("Game over");
+        
     }
 }
