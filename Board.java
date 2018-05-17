@@ -77,7 +77,11 @@ public class Board
     }
 
     public void setShip(int x, int y){
+
         grid[y-1][x-1]="#";
+
+        
+
     }
 
     public String[][] getGrid(){
