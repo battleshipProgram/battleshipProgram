@@ -21,6 +21,7 @@ public class ActualGame
         o = new Opponent();
         o.setShips();
         boolean thing = false;
+        boolean factor;
         Scanner scan = new Scanner(System.in);
         //Getting the coordinates and orientation
         int xPos;
@@ -35,7 +36,7 @@ public class ActualGame
         {
             if(i == 2)
             {
-               shipName = "Submarine";
+                shipName = "Submarine";
             }
             else if(i == 3)
             {
@@ -77,16 +78,16 @@ public class ActualGame
                 {
                     for(Coordinate co: ships.getCoordinates())
                     {
-                while(yPos + i > 10 || yPos==co.getY())
-                {
-                    System.out.println("Invalid coordinates, please reenter: ");
-                    System.out.println("Enter the row of the ship: ");
-                    yPos = scan.nextInt();
-                    System.out.println("Enter the column of the ship: ");
-                    xPos = scan.nextInt();
+                        while(yPos + i > 10 || (yPos==co.getY()&&xPos ==co.getX()))
+                        {
+                            System.out.println("Invalid coordinates, please reenter: ");
+                            System.out.println("Enter the row of the ship: ");
+                            yPos = scan.nextInt();
+                            System.out.println("Enter the column of the ship: ");
+                            xPos = scan.nextInt();
+                        }
+                    }
                 }
-                }
-            }
             }
             else
             {
@@ -94,15 +95,15 @@ public class ActualGame
                 {
                     for(Coordinate co: ships.getCoordinates())
                     {
-                while(xPos + i > 10 || xPos == co.getX())
-                {
-                    System.out.println("Invalid coordinates, please reenter: ");
-                    System.out.println("Enter the row of the ship: ");
-                    yPos = scan.nextInt();
-                    System.out.println("Enter the column of the ship: ");
-                    xPos = scan.nextInt();
-                }
-                }
+                        while(xPos + i > 10 || (xPos == co.getX()&&yPos==co.getY()))
+                        {
+                            System.out.println("Invalid coordinates, please reenter: ");
+                            System.out.println("Enter the row of the ship: ");
+                            yPos = scan.nextInt();
+                            System.out.println("Enter the column of the ship: ");
+                            xPos = scan.nextInt();
+                        }
+                    }
                 }
             }
             if(i == 2)
@@ -125,16 +126,66 @@ public class ActualGame
                 b = new Battleship(xPos, yPos, thing);
                 list.add(b);
             }
-            
+
         }
         p = new Player(s, g, c, b, playerBoard);
         for(Ship ships: list)
         {
             for(Coordinate co: ships.getCoordinates())
             {
-                p.getPlayerBoard().playerHit(co.getX(), co.getY());
+                p.getPlayerBoard().setShip(co.getX(), co.getY());
+
             }
         }
         p.getPlayerBoard().printBoard();
+        factor = true;
+        
+        while(o.getOpponentShips().size() > 0 && p.getShips().size() > 0)
+        {   
+                factor = false;
+                System.out.println("What row would you like to hit?");
+                yPos = scan.nextInt();
+                System.out.println("What column would you like to hit?");
+                xPos = scan.nextInt();
+                
+                while(yPos < 1 || yPos > 10 || xPos < 1 || xPos > 10)
+                {
+                    System.out.println("Invalid coordinates, please reenter:");
+                    System.out.println("What row would you like to hit?");
+                    yPos = scan.nextInt();
+                    System.out.println("What column would you like to hit?");
+                    xPos = scan.nextInt();
+                }
+                for(Ship ships: o.getOpponentShips())
+                {
+                    for(Coordinate co: ships.getCoordinates())
+                    {
+                        if(co.getX() == xPos && co.getY() == yPos)
+                        {
+                            targets.playerHit(xPos, yPos);
+                            factor = true;
+                            ships.getCoordinates().remove(co);
+                            
+                        }
+
+                    }
+                }
+                if(factor)
+                {
+                    System.out.println("You hit!");
+                    
+                }
+                else
+                {
+                    System.out.println("you missed...");
+                    targets.playerMiss(xPos, yPos);
+                    
+                }
+                targets.printBoard();
+                
+            
+
+            
+        }
     }
 }

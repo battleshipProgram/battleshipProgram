@@ -46,7 +46,7 @@ public abstract class Ship implements ShipMethod
         {
             for(int i = 1; i < length; i++)
             {
-                coordinates.add(new Coordinate(xPos, yPos - i)); 
+                coordinates.add(new Coordinate(xPos, yPos + i)); 
             }
         }
         else
