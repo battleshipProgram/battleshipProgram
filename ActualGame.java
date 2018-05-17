@@ -20,6 +20,13 @@ public class ActualGame
         opponentBoard = new Board();
         o = new Opponent();
         o.setShips();
+        for(Ship ships: o.getOpponentShips())
+        {
+            for(Coordinate co: ships.getCoordinates())
+            {
+                opponentBoard.setShip(co.getX(), co.getY());
+            }
+        }
         boolean thing = false;
         boolean factor;
         Scanner scan = new Scanner(System.in);
@@ -140,52 +147,99 @@ public class ActualGame
         p.getPlayerBoard().printBoard();
         factor = true;
         
-        while(o.getOpponentShips().size() > 0 && p.getShips().size() > 0)
-        {   
-                factor = false;
-                System.out.println("What row would you like to hit?");
-                yPos = scan.nextInt();
-                System.out.println("What column would you like to hit?");
-                xPos = scan.nextInt();
+        // while(o.getOpponentShips().size() > 0 && p.getShips().size() > 0)
+        // {   
+                // factor = false;
+                // System.out.println("What row would you like to hit?");
+                // yPos = scan.nextInt();
+                // System.out.println("What column would you like to hit?");
+                // xPos = scan.nextInt();
                 
-                while(yPos < 1 || yPos > 10 || xPos < 1 || xPos > 10)
-                {
-                    System.out.println("Invalid coordinates, please reenter:");
-                    System.out.println("What row would you like to hit?");
-                    yPos = scan.nextInt();
-                    System.out.println("What column would you like to hit?");
-                    xPos = scan.nextInt();
-                }
-                for(Ship ships: o.getOpponentShips())
-                {
-                    for(Coordinate co: ships.getCoordinates())
-                    {
-                        if(co.getX() == xPos && co.getY() == yPos)
-                        {
-                            targets.playerHit(xPos, yPos);
-                            factor = true;
-                            ships.getCoordinates().remove(co);
+                // while(yPos < 1 || yPos > 10 || xPos < 1 || xPos > 10)
+                // {
+                    // System.out.println("Invalid coordinates, please reenter:");
+                    // System.out.println("What row would you like to hit?");
+                    // yPos = scan.nextInt();
+                    // System.out.println("What column would you like to hit?");
+                    // xPos = scan.nextInt();
+                // }
+                // for(Ship ships: o.getOpponentShips())
+                // {
+                    // for(Coordinate co: ships.getCoordinates())
+                    // {
+                        // if(co.getX() == xPos && co.getY() == yPos)
+                        // {
+                            // targets.playerHit(xPos, yPos);
+                            // factor = true;
                             
-                        }
+                        // }
+                    // }
+                // }
+                // if(factor)
+                // {
+                    // System.out.println("You hit!");
+                // }
+                // else
+                // {
+                    // System.out.println("you missed...");
+                    // targets.playerMiss(xPos, yPos);
+                // }
+                // targets.printBoard();
+                
+            
 
+            
+        // }
+        Coordinate shot=new Coordinate(0,0);
+        System.out.println("Your Turn");
+        boolean hit=true;
+        int xShot=0,yShot=0;
+        ArrayList<Coordinate> listOfShots=new ArrayList<Coordinate>();
+        boolean conditionOne=true;
+        boolean conditionTwo=true;
+        opponentBoard.printBoard();
+        while(hit){
+            while(conditionOne||conditionTwo){
+                System.out.println("\nLocation to shoot:\nRow: ");
+                
+                yShot=scan.nextInt();
+                System.out.println("\nColumn: ");
+                xShot=scan.nextInt();
+                conditionOne=((Math.abs(xShot-5)>5)||(Math.abs(yShot-5)>5));
+                shot=new Coordinate(xShot,yShot);
+                listOfShots.add(shot);
+                int count=0;
+                for(int i=0;i<listOfShots.size()-1;i++){
+                    if(listOfShots.get(i).equals(shot)){
+                        count++;
                     }
                 }
-                if(factor)
-                {
-                    System.out.println("You hit!");
-                    
-                }
-                else
-                {
-                    System.out.println("you missed...");
-                    targets.playerMiss(xPos, yPos);
-                    
-                }
-                targets.printBoard();
-                
-            
+                conditionTwo=count>0;
+                // while(Math.abs(xShot-5)>5||Math.abs(yShot-5)>5){
+                // System.out.println("Invalid location, reenter coordinates");
+                // System.out.println("\nLocation to shoot:\nRow: ");
+                // scan=new Scanner(System.in);
+                // yShot=scan.nextInt();
+                // System.out.println("\nColumn: ");
+                // xShot=scan.nextInt();
+                // }
+                // //check for shooting in the same spot
+            }
 
-            
+            if(opponentBoard.getGrid()[yShot-1][xShot-1].equals("#")){
+                System.out.println("Nice shot!");
+                targets.playerHit(shot.getX(),shot.getY());
+                hit=true;
+            }
+            else{
+                System.out.println("Miss!");
+                targets.playerMiss(shot.getX(),shot.getY());
+                hit=false;
+            }
+            System.out.println("\nYour Shots: \n");
+            targets.printBoard();
+            conditionOne=true;
+            conditionTwo=true;
         }
     }
 }

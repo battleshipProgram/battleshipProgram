@@ -110,9 +110,9 @@ public class Opponent
             // }
         // }
         Submarine s = new Submarine(1, 1, true);
-        Gunboat g = new Gunboat(1, 2, true);
-        Carrier c = new Carrier(1, 3, true);
-        Battleship b = new Battleship(1, 4, true);
+        Gunboat g = new Gunboat(2, 1, true);
+        Carrier c = new Carrier(3, 1, true);
+        Battleship b = new Battleship(4, 1, true);
         list.add(s);
         list.add(g);
         list.add(c);
