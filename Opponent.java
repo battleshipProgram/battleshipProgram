@@ -16,16 +16,13 @@ public class Opponent
     private static int yPos;
     /**
      * creates a Opponent object to play against the player
-     * (this would be an automated system so a lot 
-     * of use of math.random and making sure it guesses and 
-     * places the ships fairly)
-     * @param: Submarine s, Gunboat g, Carrier c, Battleship b
+     * @param: none
      * @return: none. this is a constructor
      * Author: Anand Vadlamani 
      */
     public Opponent()
     {
-
+     
     }
 
     /**

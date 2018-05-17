@@ -214,6 +214,7 @@ public class ActualGame
                         count++;
                     }
                 }
+
                 conditionTwo=count>0;
                 // while(Math.abs(xShot-5)>5||Math.abs(yShot-5)>5){
                 // System.out.println("Invalid location, reenter coordinates");
@@ -225,6 +226,22 @@ public class ActualGame
                 // }
                 // //check for shooting in the same spot
             }
+
+                // if(factor)
+                // {
+                    // System.out.println("You hit!");
+                    
+                // }
+                // else
+                // {
+                    // System.out.println("you missed...");
+                    // targets.playerMiss(xPos, yPos);
+                   
+                // }
+                // targets.printBoard();
+                
+            
+
 
             if(opponentBoard.getGrid()[yShot-1][xShot-1].equals("#")){
                 System.out.println("Nice shot!");
