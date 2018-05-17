@@ -12,6 +12,6 @@
 public class START
 {
     public static void main(String args[]){
-        Game g=new Game();
+       ActualGame s = new ActualGame(); 
     }
 }
