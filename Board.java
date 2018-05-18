@@ -76,7 +76,14 @@ public class Board
         grid[yPos - 1][xPos - 1]="O";
     }
 
-    public void setShip(int x, int y){
+    public void setShip(int x, int y)
+    /**
+     * labels a certain spot with a hashtag to mark a ship
+     * @author Andrew
+     * @param int x, int y
+     * @return none
+     */
+    {
 
         grid[y-1][x-1]="#";
 
@@ -84,7 +91,14 @@ public class Board
 
     }
 
-    public String[][] getGrid(){
+    public String[][] getGrid()
+    /**
+     * returns the board
+     * @author Andrew
+     * @param none
+     * @return String[][]
+     */
+    {
         return grid;
     }
 
@@ -121,6 +135,12 @@ public class Board
         }
     }
     public boolean findHashtags()
+    /**
+     * checks if there are still unhit ships on the board
+     * @author Allen
+     * @param none
+     * @return boolean
+     */
     {
         for(int i = 0; i < grid.length; i++)
         {

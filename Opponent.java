@@ -66,54 +66,54 @@ public class Opponent
      */
     public static void setShips()
     {
-        // for(int i = 2; i <= 5; i++)
-        // {
-            // xPos = (int)(Math.random() * (10 - i) + 1);
-            // yPos = (int)(Math.random() * (10) + 1);
-            // for(Ship s: list)
-            // {
-                // for(Coordinate c: s.getCoordinates())
-                // {
-                    // for(int j = 0; j < i; j++)
-                    // {
-                        // while(xPos + j == c.getX() || yPos + j == c.getY())
-                        // {
-                            // xPos = (int)(Math.random() * (10 - i) + 1);
-                            // yPos = (int)(Math.random() * (10) + 1);
-                        // }
-                    // }
-                // }
-            // }
+        for(int i = 2; i <= 5; i++)
+        {
+            xPos = (int)(Math.random() * (10 - i) + 1);
+            yPos = (int)(Math.random() * (10) + 1);
+            for(Ship s: list)
+            {
+                for(Coordinate c: s.getCoordinates())
+                {
+                    for(int j = 0; j < i; j++)
+                    {
+                        while(xPos + j == c.getX() || yPos + j == c.getY())
+                        {
+                            xPos = (int)(Math.random() * (10 - i) + 1);
+                            yPos = (int)(Math.random() * (10) + 1);
+                        }
+                    }
+                }
+            }
 
-            // if(i == 2)
-            // {
-                // Submarine s = new Submarine(xPos, yPos, false);
-                // list.add(s);
-            // }
-            // else if(i == 3)
-            // {
-                // Gunboat g = new Gunboat(xPos, yPos, false);
-                // list.add(g);
-            // }
-            // else if(i == 4)
-            // {
-                // Carrier c = new Carrier(xPos, yPos, false);
-                // list.add(c);
-            // }
-            // else
-            // {
-                // Battleship b = new Battleship(xPos, yPos, false);
-                // list.add(b);
-            // }
-        // }
-        Submarine s = new Submarine(1, 1, true);
-        Gunboat g = new Gunboat(2, 1, true);
-        Carrier c = new Carrier(3, 1, true);
-        Battleship b = new Battleship(4, 1, true);
-        list.add(s);
-        list.add(g);
-        list.add(c);
-        list.add(b);
+            if(i == 2)
+            {
+                Submarine s = new Submarine(xPos, yPos, false);
+                list.add(s);
+            }
+            else if(i == 3)
+            {
+                Gunboat g = new Gunboat(xPos, yPos, false);
+                list.add(g);
+            }
+            else if(i == 4)
+            {
+                Carrier c = new Carrier(xPos, yPos, false);
+                list.add(c);
+            }
+            else
+            {
+                Battleship b = new Battleship(xPos, yPos, false);
+                list.add(b);
+            }
+        }
+        // Submarine s = new Submarine(1, 1, true);
+        // Gunboat g = new Gunboat(2, 1, true);
+        // Carrier c = new Carrier(3, 1, true);
+        // Battleship b = new Battleship(4, 1, true);
+        // list.add(s);
+        // list.add(g);
+        // list.add(c);
+        // list.add(b);
 
     }
 
