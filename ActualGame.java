@@ -2,8 +2,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 /**
  * Write a description of class ActualGame here.
- *
- * @author (your name)
+ * It's the game
+ * @author Allen Ding
  * @version (a version number or a date)
  */
 public class ActualGame
@@ -13,7 +13,9 @@ public class ActualGame
     private Opponent o; 
     private Board targets;
     private Board opponentBoard;
-    public ActualGame()
+    /**
+     * 
+     */public ActualGame()
     {
         playerBoard = new Board();
         targets = new Board();
@@ -212,6 +214,9 @@ public class ActualGame
         //opponentBoard.printBoard();
         while(opponentBoard.findHashtags() && p.getPlayerBoard().findHashtags())
         {
+            hit=true;
+            conditionOne=true;
+            conditionTwo=true;
         while(hit){
             while(conditionOne||conditionTwo){
                 System.out.println("\nLocation to shoot:\nRow: ");
