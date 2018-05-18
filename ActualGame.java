@@ -14,7 +14,10 @@ public class ActualGame
     private Board targets;
     private Board opponentBoard;
     /**
-     * 
+     * Starts the game and makes everything work
+     * Author: Allen Ding
+     * @param: none lol
+     * @return: ? none
      */public ActualGame()
     {
         playerBoard = new Board();
