@@ -205,7 +205,6 @@ public class ActualGame
         // }
         // targets.printBoard();
 
-
         // }
         Coordinate shot=new Coordinate(0,0);
         System.out.println("Your Turn");
@@ -220,134 +219,132 @@ public class ActualGame
             hit=true;
             conditionOne=true;
             conditionTwo=true;
-        while(hit){
-            while(conditionOne||conditionTwo){
-                System.out.println("\nLocation to shoot:\nRow: ");
+            while(hit){
+                while(conditionOne||conditionTwo){
+                    System.out.println("\nLocation to shoot:\nRow: ");
 
-                yShot=scan.nextInt();
-                System.out.println("\nColumn: ");
-                xShot=scan.nextInt();
-                conditionOne=((Math.abs(xShot-5)>5)||(Math.abs(yShot-5)>5));
-                shot=new Coordinate(xShot,yShot);
-                listOfShots.add(shot);
-                int count=0;
-                for(int i=0;i<listOfShots.size()-1;i++){
-                    if(listOfShots.get(i).equals(shot)){
-                        count++;
+                    yShot=scan.nextInt();
+                    System.out.println("\nColumn: ");
+                    xShot=scan.nextInt();
+                    conditionOne=((Math.abs(xShot-5)>5)||(Math.abs(yShot-5)>5));
+                    shot=new Coordinate(xShot,yShot);
+                    listOfShots.add(shot);
+                    int count=0;
+                    for(int i=0;i<listOfShots.size()-1;i++){
+                        if(listOfShots.get(i).equals(shot)){
+                            count++;
+                        }
                     }
+
+                    conditionTwo=count>0;
+                    // while(Math.abs(xShot-5)>5||Math.abs(yShot-5)>5){
+                    // System.out.println("Invalid location, reenter coordinates");
+                    // System.out.println("\nLocation to shoot:\nRow: ");
+                    // scan=new Scanner(System.in);
+                    // yShot=scan.nextInt();
+                    // System.out.println("\nColumn: ");
+                    // xShot=scan.nextInt();
+                    // }
+                    // //check for shooting in the same spot
                 }
 
-                conditionTwo=count>0;
-                // while(Math.abs(xShot-5)>5||Math.abs(yShot-5)>5){
-                // System.out.println("Invalid location, reenter coordinates");
-                // System.out.println("\nLocation to shoot:\nRow: ");
-                // scan=new Scanner(System.in);
-                // yShot=scan.nextInt();
-                // System.out.println("\nColumn: ");
-                // xShot=scan.nextInt();
+                // if(factor)
+                // {
+                // System.out.println("You hit!");
+
                 // }
-                // //check for shooting in the same spot
+                // else
+                // {
+                // System.out.println("you missed...");
+                // targets.playerMiss(xPos, yPos);
+
+                // }
+                // targets.printBoard();
+
+                if(opponentBoard.getGrid()[yShot-1][xShot-1].equals("#")){
+                    System.out.println("Nice shot!");
+                    targets.playerHit(shot.getX(),shot.getY());
+                    opponentBoard.playerHit(shot.getX(), shot.getY());
+                    hit=true;
+                    conditionOne=true;
+                    conditionTwo=true;
+                }
+                else{
+                    System.out.println("Miss!");
+                    targets.playerMiss(shot.getX(),shot.getY());
+                    hit=false;
+                    conditionOne=false;
+                    conditionTwo=false;
+                }
+                System.out.println("\nYour Shots: \n");
+                targets.printBoard();
+
             }
-
-            // if(factor)
-            // {
-            // System.out.println("You hit!");
-
-            // }
-            // else
-            // {
-            // System.out.println("you missed...");
-            // targets.playerMiss(xPos, yPos);
-
-            // }
-            // targets.printBoard();
-
-
-            if(opponentBoard.getGrid()[yShot-1][xShot-1].equals("#")){
-                System.out.println("Nice shot!");
-                targets.playerHit(shot.getX(),shot.getY());
-                opponentBoard.playerHit(shot.getX(), shot.getY());
-                hit=true;
-                conditionOne=true;
-                conditionTwo=true;
-            }
-            else{
-                System.out.println("Miss!");
-                targets.playerMiss(shot.getX(),shot.getY());
-                hit=false;
-                conditionOne=false;
-                conditionTwo=false;
-            }
-            System.out.println("\nYour Shots: \n");
-            targets.printBoard();
-            
-        }
-        int xPosO = 0;
-        int yPosO = 0;
-        boolean opponentHit = true;
-        boolean conditionThree = true;
-        boolean conditionFour = true;
-        ArrayList<Coordinate> listOfShotsO = new ArrayList<Coordinate>();
-        while(opponentHit){
-            while(conditionThree||conditionFour){
-                yPosO = (int)(Math.random() * 10 + 1);
-                xPosO = (int)(Math.random() * 10 + 1);
-                conditionThree=((Math.abs(xPosO-5)>5)||(Math.abs(yPosO-5)>5));
-                shot=new Coordinate(xPosO,yPosO);
-                listOfShotsO.add(shot);
-                int count=0;
-                for(int i=0;i<listOfShotsO.size()-1;i++){
-                    if(listOfShotsO.get(i).equals(shot)){
-                        count++;
+            int xPosO = 0;
+            int yPosO = 0;
+            boolean opponentHit = true;
+            boolean conditionThree = true;
+            boolean conditionFour = true;
+            ArrayList<Coordinate> listOfShotsO = new ArrayList<Coordinate>();
+            while(opponentHit){
+                while(conditionThree||conditionFour){
+                    yPosO = (int)(Math.random() * 10 + 1);
+                    xPosO = (int)(Math.random() * 10 + 1);
+                    conditionThree=((Math.abs(xPosO-5)>5)||(Math.abs(yPosO-5)>5));
+                    shot=new Coordinate(xPosO,yPosO);
+                    listOfShotsO.add(shot);
+                    int count=0;
+                    for(int i=0;i<listOfShotsO.size()-1;i++){
+                        if(listOfShotsO.get(i).equals(shot)){
+                            count++;
+                        }
                     }
+
+                    conditionFour=count>0;
+                    // while(Math.abs(xShot-5)>5||Math.abs(yShot-5)>5){
+                    // System.out.println("Invalid location, reenter coordinates");
+                    // System.out.println("\nLocation to shoot:\nRow: ");
+                    // scan=new Scanner(System.in);
+                    // yShot=scan.nextInt();
+                    // System.out.println("\nColumn: ");
+                    // xShot=scan.nextInt();
+                    // }
+                    // //check for shooting in the same spot
                 }
 
-                conditionFour=count>0;
-                // while(Math.abs(xShot-5)>5||Math.abs(yShot-5)>5){
-                // System.out.println("Invalid location, reenter coordinates");
-                // System.out.println("\nLocation to shoot:\nRow: ");
-                // scan=new Scanner(System.in);
-                // yShot=scan.nextInt();
-                // System.out.println("\nColumn: ");
-                // xShot=scan.nextInt();
+                // if(factor)
+                // {
+                // System.out.println("You hit!");
+
                 // }
-                // //check for shooting in the same spot
+                // else
+                // {
+                // System.out.println("you missed...");
+                // targets.playerMiss(xPos, yPos);
+
+                // }
+                // targets.printBoard();
+
+                if(p.getPlayerBoard().getGrid()[yPosO-1][xPosO-1].equals("#")){
+                    System.out.println("Opponent hit your ship at row " + yPosO + " and column " + xPosO);
+                    p.getPlayerBoard().playerHit(shot.getX(),shot.getY());
+                    opponentHit=true;
+                    conditionThree=true;
+                    conditionFour=true;
+                }
+                else{
+                    System.out.println("Opponent guessed your ship at row " + yPosO + " and column " + xPosO +", but missed");
+                    p.getPlayerBoard().playerMiss(shot.getX(),shot.getY());
+                    opponentHit=false;
+                    conditionThree=false;
+                    conditionFour=false;
+                }
+                System.out.println("\nYour Board with Opponent Guesses/Hits: \n");
+                p.getPlayerBoard().printBoard();
+
             }
-
-            // if(factor)
-            // {
-            // System.out.println("You hit!");
-
-            // }
-            // else
-            // {
-            // System.out.println("you missed...");
-            // targets.playerMiss(xPos, yPos);
-
-            // }
-            // targets.printBoard();
-
-
-            if(p.getPlayerBoard().getGrid()[yPosO-1][xPosO-1].equals("#")){
-                System.out.println("Opponent hit your ship at row " + yPosO + " and column " + xPosO);
-                p.getPlayerBoard().playerHit(shot.getX(),shot.getY());
-                opponentHit=true;
-                conditionThree=true;
-                conditionFour=true;
-            }
-            else{
-                System.out.println("Opponent guessed your ship at row " + yPosO + " and column " + xPosO +", but missed");
-                p.getPlayerBoard().playerMiss(shot.getX(),shot.getY());
-                opponentHit=false;
-                conditionThree=false;
-                conditionFour=false;
-            }
-            System.out.println("\nYour Board with Opponent Guesses/Hits: \n");
-            p.getPlayerBoard().printBoard();
-            
         }
-    }
         System.out.println("Game over");
-        
+
     }
 }

@@ -1,6 +1,6 @@
 
 /**
- * START.java  
+ * CLICKHERE.java  
  *
  * @author: Anand Vadlamani 
  * Assignment #:
@@ -9,7 +9,7 @@
  * 
  *
  */
-public class START
+public class CLICKHERE
 {
     public static void main(String args[]){
        ActualGame s = new ActualGame();
